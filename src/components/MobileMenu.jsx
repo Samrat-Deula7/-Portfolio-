@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 
 const MobileMenu=({menuOpen,setMenuOpen})=>{
     
