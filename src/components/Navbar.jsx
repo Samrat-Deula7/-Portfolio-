@@ -11,7 +11,7 @@ return (
     <div className="min-w-screen  max-w-5xl mx-auto px-4">
       <div className="flex justify-between sm:justify-around items-center h-16 ">
         <a href="#home" className="font-mono text-xl font-bold text-white">
-          Samrat <span className="text-blue-500">Dev</span>
+          Samrat <span className="text-purple-600">Dev</span>
         </a>
 
         {/* This is the mobile menu */}
