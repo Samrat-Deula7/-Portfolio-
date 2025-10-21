@@ -1,5 +1,9 @@
 import RevealOnScroll from "../../components/RevealOnScroll";
 import ReactImg from "../../assets/react.svg"
+import TailwindCSSImg from "../../assets/tailwindcss.png"
+import NodeImg from "../../assets/node.png"
+import ExpressImg from "../../assets/express.png"
+import MongoImg from "../../assets/mongo.png"
 
 const About = () => {
   // const frontendSkills = ["React", "TailwindCSS"];
@@ -16,7 +20,7 @@ const About = () => {
           </h2>
 
           <div className=" rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 mb-6 text-xl font-bold ">
               Passionate developer with expertise in building scalable web
               application and creating innovative solutions.
             </p>
@@ -53,15 +57,43 @@ const About = () => {
 
               <div className="w-80 md:2xl bg-blue-500/10 px-2 py-3 border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
                 <h3 className="text-xl font-bold mb-4">Frontend</h3>
-                <div>
-                  <div className=" bg-blue-500/10 px-2 py-2  border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
-                    <img src={ReactImg} alt="" />
-                    <strong>React</strong>
+                <div className="flex  justify-around items-center">
+                  {/* These are the frontend skills */}
+                  <div className="w-20  flex flex-col justify-center items-center min-h-10 bg-blue-500/10 px-2 py-2  border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
+                    <img src={ReactImg} alt="react" className="w-10  h-10" />
+                    <strong className="text-sm">React</strong>
+                  </div>
+                  <div className="w-20 flex flex-col justify-center items-center min-h-10 bg-blue-500/10 px-2 py-2  border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
+                    <img
+                      src={TailwindCSSImg}
+                      alt="tailwind"
+                      className="w-20 h-10"
+                    />
+                    <strong className="text-sm">Tailwind</strong>
                   </div>
                 </div>
               </div>
-              <div className="w-80 md:2xl bg-blue-500/10 px-2 border rounded-xl border-blue-500 hover:-translate-y-1 transition-all">
+              <div className="w-80 md:2xl bg-blue-500/10 px-2 py-3 border rounded-xl border-blue-500 hover:-translate-y-1 transition-all">
                 <h3 className="text-xl font-bold mb-4">Backend</h3>
+                <div className="flex  justify-around items-center">
+                  {/* These are the backend skills */}
+                  <div className="w-20  flex flex-col justify-center items-center min-h-10 bg-blue-500/10 px-2 py-2  border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
+                    <img src={NodeImg} alt="react" className="w-10  h-10" />
+                    <strong className="text-sm">Node</strong>
+                  </div>
+                  <div className="w-20 flex flex-col justify-center items-center min-h-10 bg-blue-500/10 px-2 py-2  border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
+                    <img
+                      src={ExpressImg}
+                      alt="tailwind"
+                      className="w-20 h-10"
+                    />
+                    <strong className="text-sm">Express</strong>
+                  </div>
+                  <div className="w-20 flex flex-col justify-center items-center min-h-10 bg-blue-500/10 px-2 py-2  border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
+                    <img src={MongoImg} alt="tailwind" className="w-20 h-10" />
+                    <strong className="text-sm">MongoDB</strong>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
