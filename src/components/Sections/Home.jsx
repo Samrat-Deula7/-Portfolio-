@@ -23,7 +23,7 @@ const Home = () => {
               View Projects
             </a>
             <a
-              href="#Contact"
+              href="#contact"
               className="border border-blue-500/50 py-3 px-6 rounded font-medium tracking-all duration-200 text-blue-500 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-blue-500/10"
             >
               Contact Me
