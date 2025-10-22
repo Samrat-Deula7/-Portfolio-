@@ -9,7 +9,7 @@ const Home = () => {
     >
       <RevealOnScroll>
         <div className="text-center place-items-center z-10 px-4">
-          <div className="w-43 h-43 lg:w-83 lg:h-83 md:w-53 md:h-53 rounded-full bg-amber-600 mb-20">
+          <div className="w-43 h-43 lg:w-83 lg:h-83 md:w-53 md:h-53 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 mb-20">
             <div className="w-full h-full flex justify-center items-center ">
               <img
                 src={Pic}
