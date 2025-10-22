@@ -19,7 +19,7 @@ const Home = () => {
             </div>
           </div>
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent ">
-            Hi,This is Home part
+            Samrat Deula
           </h1>
           <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
             Hello, There I'm an full-stack developer who loves to build
