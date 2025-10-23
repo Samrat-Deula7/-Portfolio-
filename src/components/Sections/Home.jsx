@@ -9,12 +9,12 @@ const Home = () => {
     >
       <RevealOnScroll>
         <div className="text-center place-items-center z-10 px-4">
-          <div className="w-43 h-43 lg:w-83 lg:h-83 md:w-53 md:h-53 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 mb-20">
+          <div className="w-43 h-43 md:w-53 md:h-53 lg:w-63 lg:h-63  rounded-full bg-gradient-to-r from-blue-500 to-purple-600 mb-20">
             <div className="w-full h-full flex justify-center items-center ">
               <img
                 src={Pic}
                 alt="User"
-                className="w-40 h-40 lg:w-80 lg:h-80 md:w-50 md:h-50  bg-cover bg-center rounded-full overflow-clip"
+                className="w-40 h-40 md:w-50 md:h-50 lg:w-60 lg:h-60   bg-cover bg-center rounded-full overflow-clip"
               />
             </div>
           </div>
