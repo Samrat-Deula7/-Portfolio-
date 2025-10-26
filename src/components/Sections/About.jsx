@@ -11,7 +11,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center pt-18"
+      className="min-h-screen flex items-center justify-center pt-20"
     >
       <RevealOnScroll>
         <div className="max-w-7xl mx-auto px-4 md:w-3xl lg:w-7xl">
