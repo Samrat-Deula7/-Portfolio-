@@ -3,6 +3,7 @@
 html,body{
  margin: 0;
  padding: 0;  
+ overflow-x: hidden;
  font-family: "Space Grotesk", sans-serif;  /*This font family doesn't work fix it later */
  background: #0a0a0a;
  color: #f3f4f6;

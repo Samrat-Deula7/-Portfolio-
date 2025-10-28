@@ -14,7 +14,7 @@ const About = () => {
       className="min-h-screen flex items-center justify-center pt-20"
     >
       <RevealOnScroll>
-        <div className="max-w-7xl mx-auto px-4 md:w-3xl lg:w-7xl">
+        <div className="max-w-7xl mx-auto px-4 md:w-3xl lg:w-5xl xl:w-7xl">
           <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
             About me
           </h2>
