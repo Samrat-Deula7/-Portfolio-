@@ -2,10 +2,7 @@ import { useEffect } from "react";
 
 const Navbar=({menuOpen,setMenuOpen})=>{
 
-    // This use effect disables scrolling when menuOpen is clicked
-    useEffect(()=>{
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    },[menuOpen])
+
 return (
   <nav className="fixed top-0 max-w-screen z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
     <div className="min-w-screen  max-w-5xl mx-auto px-4">
