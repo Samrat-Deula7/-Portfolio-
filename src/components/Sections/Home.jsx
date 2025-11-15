@@ -9,6 +9,7 @@ const Home = () => {
     >
       <RevealOnScroll>
         <div className="text-center place-items-center z-10 px-4">
+          
           <div className="w-43 h-43 md:w-53 md:h-53 lg:w-63 lg:h-63  rounded-full bg-gradient-to-r from-blue-500 to-purple-600 mb-20">
             <div className="w-full h-full flex justify-center items-center ">
               <img
@@ -18,6 +19,7 @@ const Home = () => {
               />
             </div>
           </div>
+
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent ">
             Samrat Deula
           </h1>
