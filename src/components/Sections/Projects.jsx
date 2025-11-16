@@ -20,7 +20,7 @@ const Projects = () => {
               <div>
                 <img src={Project1} alt="Project1" />
               </div>
-              <h3 className="text-xl font-bold mb-2">inotebook</h3>
+              <h3 className="text-xl font-bold mb-2 text-[#3b82f6]">E-Kam</h3>
               <p className="text-gray-400 mb-3">
                 Scalable note storing project with user authentication and user
                 based data retrival

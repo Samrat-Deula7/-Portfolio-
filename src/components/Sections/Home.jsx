@@ -32,13 +32,17 @@ const Home = () => {
             </div>
           </div>
 
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent ">
-            Samrat Deula
-          </h1>
-          <p className="text-white text-lg mb-8 max-w-lg mx-auto">
+          <div className="backdrop-blur-3xl  rounded-full px-3 py-2 mb-6">
+            <h1 className="  text-3xl md:text-5xl lg:text-7xl font-bold  bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent ">
+              Samrat Deula
+            </h1>
+          </div>
+          <div className="backdrop-blur-3xl  rounded-full px-3 py-2 mb-8">
+          <p className="text-white text-lg  max-w-lg mx-auto">
             Hello, There I'm an full-stack developer who loves to build
             intuative , creative and scalable applications.
           </p>
+          </div>
           <div className="flex justify-center space-x-4">
             <a
               href="#projects"

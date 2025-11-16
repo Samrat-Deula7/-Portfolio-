@@ -15,7 +15,7 @@ function App() {
   // The following useEffect prevents the page form scrolling when the hamburger icon is open
 
   useEffect(() => {
-    if (menuOpen ) {
+    if (menuOpen) {
       const scrollY = window.scrollY;
       document.body.style.position = "fixed";
       document.body.style.top = `-${scrollY}px`;
