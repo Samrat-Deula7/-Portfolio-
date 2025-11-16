@@ -1,15 +1,27 @@
 import RevealOnScroll from "../../components/RevealOnScroll";
 import Pic from "../../assets/pic.png"
+import Bg from "../../assets/Bg.mp4"
 
 const Home = () => {
+  
   return (
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative pt-18"
     >
       <RevealOnScroll>
-        <div className="text-center place-items-center z-10 px-4">
-          
+        <div className="relative flex flex-col items-center justify-center min-h-screen min-w-screen  text-center place-items-center z-10 px-4">
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={Bg} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
           <div className="w-43 h-43 md:w-53 md:h-53 lg:w-63 lg:h-63  rounded-full bg-gradient-to-r from-blue-500 to-purple-600 mb-20">
             <div className="w-full h-full flex justify-center items-center ">
               <img
@@ -23,7 +35,7 @@ const Home = () => {
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent ">
             Samrat Deula
           </h1>
-          <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
+          <p className="text-white text-lg mb-8 max-w-lg mx-auto">
             Hello, There I'm an full-stack developer who loves to build
             intuative , creative and scalable applications.
           </p>
