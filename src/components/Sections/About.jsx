@@ -131,7 +131,7 @@ const About = () => {
                 </p>
                 <div className="flex items-center justify-center relative w-[300px] h-[150px] mt-7 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:translate-y-2">
                   <div className="relative w-60 h-20 bg-blue-500 font-bold text-purple-900 rounded-2xl transition-transform animate-bounce px-4 py-4">
-                    Currently my completing bachelor's degree{" "}
+                    Currently completing my bachelor's degree{" "}
                     <span className="font-extrabold">!!</span>{" "}
                     <img
                       src={Time}
