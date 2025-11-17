@@ -25,36 +25,6 @@ const About = () => {
               application and creating innovative solutions.
             </p>
             <div className="grid place-items-center grid-cols-1 md:grid-cols-2   gap-6">
-              {/* Frontend skill displayed
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4">Frontend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {frontendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]  hover:-translate-y-1 transition-all"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-               Backend skills displayed 
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4">Backend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]  hover:-translate-y-1 transition-all"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div> */}
-
               <div className="w-80 md:2xl bg-blue-500/10 px-2 py-3 border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
                 <h3 className="text-xl font-bold mb-4">Frontend</h3>
                 <div className="flex  justify-around items-center">
@@ -98,7 +68,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          {/* <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4">🎓 Education</h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
@@ -123,6 +93,40 @@ const About = () => {
                 <div>
                   <h4 className="font-semibold">Intern at xyz company </h4>
                   <p>😅 Haven't started working</p>
+                </div>
+              </div>
+            </div>
+          </div> */}
+
+          <div>
+            <div className="w-full flex flex-col justify-center items-center py-10 ">
+              <h3 className="text-xl font-bold mb-4">🎓 Education</h3>
+              <div className="w-[70%] flex items-start ">
+                <div className="relative w-[300px] h-[150px] px-3 py-2 mb-5 rounded-2xl bg-blue-500 cursor-pointer   text-black transform duration-100 hover:-translate-y-2">
+                  <strong className="text-purple-900 font-extrabold text-[17px]">
+                    BSC.IT in Computer Science:
+                    <br />
+                    <span className="text-[14px] text-black ">
+                      Completed the course in APU with <br />
+                      Relevant Coursework: Data Structures, Full web dev, DevOps
+                      ...
+                    </span>
+                  </strong>{" "}
+                  -APU University
+                  <div className="absolute left-6 -bottom-1 rotate-45 rounded-[2px] bg-blue-500  w-[50px] h-[50px] -z-1"></div>
+                </div>
+                <p className="mt-[140px] ml-[80px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px]  transform duration-100 hover:-translate-y-2">
+                  2028 +
+                </p>
+              </div>
+              {/* this is line */}
+              <div className="bg-gradient-to-r  from-blue-500 to-purple-600   w-[70%] h-1 transform duration-100 hover:-translate-y-2 hover:border-0 cursor-pointer"></div>
+              <div className="w-[70%] flex items-end">
+                <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
+                  (2025-2028)
+                </p>
+                <div className="relative w-[300px] h-[150px] mt-5 rounded-2xl bg-blue-500 cursor-pointer   text-black transform duration-100 hover:translate-y-2">
+                  <div className="absolute -top-1 left-6 rotate-45 rounded-[2px] bg-blue-500 w-[50px] h-[50px]"></div>
                 </div>
               </div>
             </div>
