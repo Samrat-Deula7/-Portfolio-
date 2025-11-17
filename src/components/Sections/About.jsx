@@ -1,10 +1,10 @@
 import RevealOnScroll from "../../components/RevealOnScroll";
-import ReactImg from "../../assets/react.svg"
-import TailwindCSSImg from "../../assets/tailwindcss.png"
-import NodeImg from "../../assets/node.png"
-import ExpressImg from "../../assets/express.png"
-import MongoImg from "../../assets/mongo.png"
-import Time from "../../assets/time.gif"
+import ReactImg from "../../assets/react.svg";
+import TailwindCSSImg from "../../assets/tailwindcss.png";
+import NodeImg from "../../assets/node.png";
+import ExpressImg from "../../assets/express.png";
+import MongoImg from "../../assets/mongo.png";
+import Time from "../../assets/time.gif";
 const About = () => {
   // const frontendSkills = ["React", "TailwindCSS"];
   // const backendSkills = ["Node.js", "Express.js", "MongoDB"];
@@ -104,7 +104,7 @@ const About = () => {
             <div className="w-full flex flex-col justify-center items-center py-10 ">
               <h3 className="text-xl font-bold mb-4">🎓 Education</h3>
               <div className="w-[70%] flex items-start ">
-                <div className="relative w-[300px] h-[150px] px-3 py-2 mb-5 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2">
+                <div className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2">
                   <strong className="text-purple-900 font-extrabold text-[17px]">
                     BSC.IT in Computer Science:
                     <br />
@@ -115,7 +115,9 @@ const About = () => {
                     </span>
                   </strong>{" "}
                   -APU University
-                  <div className="absolute left-6 -bottom-1 rotate-45 rounded-[2px] bg-[#2563eb]  w-[50px] h-[50px]  z-[-10] pointer-events-none "></div>
+                  <div
+                    class="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "
+                  ></div>
                 </div>
                 <p className="mt-[140px] ml-[80px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px]  transform duration-100 hover:-translate-y-2">
                   2028 +
@@ -127,7 +129,7 @@ const About = () => {
                 <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
                   (2025-2028)
                 </p>
-                <div className="flex items-center justify-center relative w-[300px] h-[150px] mt-5 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:translate-y-2">
+                <div className="flex items-center justify-center relative w-[300px] h-[150px] mt-7 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:translate-y-2">
                   <div className="relative w-60 h-20 bg-blue-500 font-bold text-purple-900 rounded-2xl transition-transform animate-bounce px-4 py-4">
                     Currently my completing bachelor's degree{" "}
                     <span className="font-extrabold">!!</span>{" "}
@@ -137,7 +139,9 @@ const About = () => {
                       className="absolute left-40 -bottom-10 w-[80px] h-[80px] rounded-full"
                     />
                   </div>
-                  <div className="absolute -top-1 left-6 rotate-45 rounded-[2px] bg-[#2563eb] w-[50px] h-[50px] -z-1"></div>
+                  <div
+                    class="w-0 h-0 absolute -top-6 left-6 border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent  border-b-[15px] border-b-blue-500"
+                  ></div>
                 </div>
               </div>
             </div>
