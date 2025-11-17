@@ -68,7 +68,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4">🎓 Education</h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
@@ -96,9 +96,9 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
 
-          <div>
+          <div className="hidden lg:flex" >
             <div className="w-full flex flex-col justify-center items-center py-10 ">
               <h3 className="text-xl font-bold mb-4">🎓 Education</h3>
               <div className="w-[70%] flex items-start ">
