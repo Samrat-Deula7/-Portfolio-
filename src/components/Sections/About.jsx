@@ -110,7 +110,7 @@ const About = () => {
                     <br />
                     <span className="text-[14px] text-black ">
                       Completed the course in APU with <br />
-                      Relevant Coursework: Data Structures, Full web dev, DevOps
+                      Relevant Coursework: Data Structures, Full stack dev, DevOps
                       ...
                     </span>
                   </strong>{" "}
