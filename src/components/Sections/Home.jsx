@@ -12,7 +12,7 @@ const Home = () => {
       <RevealOnScroll>
         <div className="relative flex flex-col items-center justify-center min-h-screen min-w-screen  text-center place-items-center z-10 px-4">
           <video
-            className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+            className="absolute top-0 left-0 w-full h-full object-cover -z-10 "
             autoPlay
             muted
             loop
@@ -38,10 +38,10 @@ const Home = () => {
             </h1>
           </div>
           <div className="backdrop-blur-3xl  rounded-full px-3 py-2 mb-8">
-          <p className="text-white text-lg  max-w-lg mx-auto">
+          <h4 className="text-white text-lg  max-w-lg mx-auto">
             Hello, There I'm an full-stack developer who loves to build
             intuative , creative and scalable applications.
-          </p>
+          </h4>
           </div>
           <div className="flex justify-center space-x-4">
             <a

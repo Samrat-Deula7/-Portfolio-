@@ -9,6 +9,52 @@ html,body{
  color: #f3f4f6;
 }
 
+.light {
+  background: #f3f4f6;
+  color: #0a0a0a;
+}
+
+.light a {
+  color: #a855f7
+; /* dark gray for headings in light mode */
+}
+.light p {
+  color: #1a232f
+; /* dark gray for headings in light mode */
+}
+
+.light input{
+  background-color: rgba(0, 0, 0, 0.05);   /* bg-black/5 */
+  border: 1px solid rgba(0, 0, 0, 0.10);   /* border-black/10 */
+  color: #000000;   
+}
+.light input:focus {
+  border: 1px solid #3b82f6; /* Tailwind's blue-500 */
+  background-color: rgba(59, 130, 246, 0.05); /* blue-500 with 5% opacity */
+}
+.light textarea{
+  background-color: rgba(0, 0, 0, 0.05);   /* bg-black/5 */
+  border: 1px solid rgba(0, 0, 0, 0.10);   /* border-black/10 */
+  color: #000000;   
+}
+.light textarea:focus {
+  border: 1px solid #3b82f6; /* Tailwind's blue-500 */
+  background-color: rgba(59, 130, 246, 0.05); /* blue-500 with 5% opacity */
+}
+
+
+.dark {
+  background: #0a0a0a;
+  color: #f3f4f6;
+}
+
+.dark a {
+  color: #e5e7eb; /* light gray for headings in dark mode */
+}
+.dark p {
+  color: #e5e7eb; /* light gray for headings in dark mode */
+}
+
 @layer utilities{
     @keyframes loading{
         0%{
