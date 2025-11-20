@@ -80,7 +80,7 @@ const Navbar = ({ menuOpen, setMenuOpen, darkmode, setDarkmode }) => {
             <img
               src={Night}
               alt="night-toggle"
-              className={`w-[25px] relative top-0 left-120 transform duration-100 hover:-translate-y-1 cursor-pointer ${
+              className={`w-[25px] relative -mx-5 top-0 left-70 sm:left-70 md:left-100 lg:left-120 xl:left-150 2xl:left-180 transform duration-100 hover:-translate-y-1 cursor-pointer ${
                 darkmode ? "flex" : "hidden"
               }`}
               onClick={() => setDarkmode((prev) => !prev)}
@@ -88,7 +88,7 @@ const Navbar = ({ menuOpen, setMenuOpen, darkmode, setDarkmode }) => {
             <img
               src={Light}
               alt="light-toggle"
-              className={`w-[25px] relative top-0 left-120 transform duration-100 hover:-translate-y-1 cursor-pointer ${
+              className={`w-[25px] relative -mx-5 top-0 left-70 sm:left-70 md:left-100 lg:left-120 xl:left-150 2xl:left-180 transform duration-100 hover:-translate-y-1 cursor-pointer ${
                 darkmode ? "hidden" : "flex"
               }`}
               onClick={() => setDarkmode((prev) => !prev)}
