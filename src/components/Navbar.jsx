@@ -75,22 +75,24 @@ const Navbar = ({ menuOpen, setMenuOpen, darkmode, setDarkmode }) => {
             >
               Contact
             </a>
-            <img
-              src={Night}
-              alt="night-toggle"
-              className={`w-[25px] transform duration-100 hover:-translate-y-1 cursor-pointer ${
-                darkmode ? "flex" : "hidden"
-              }`}
-              onClick={() => setDarkmode((prev) => !prev)}
-            />
-            <img
-              src={Light}
-              alt="light-toggle"
-              className={`w-[25px] transform duration-100 hover:-translate-y-1 cursor-pointer ${
-                darkmode ? "hidden" : "flex"
-              }`}
-              onClick={() => setDarkmode((prev) => !prev)}
-            />
+            <div className="min-w-full absolute ">
+              <img
+                src={Night}
+                alt="night-toggle"
+                className={`w-[25px] relative top-0 left-80 transform duration-100 hover:-translate-y-1 cursor-pointer ${
+                  darkmode ? "flex" : "hidden"
+                }`}
+                onClick={() => setDarkmode((prev) => !prev)}
+              />
+              <img
+                src={Light}
+                alt="light-toggle"
+                className={`w-[25px] relative top-0 left-80 transform duration-100 hover:-translate-y-1 cursor-pointer ${
+                  darkmode ? "hidden" : "flex"
+                }`}
+                onClick={() => setDarkmode((prev) => !prev)}
+              />
+            </div>
           </div>
         </div>
       </div>
