@@ -1,7 +1,7 @@
 import RevealOnScroll from "../../components/RevealOnScroll";
 import Pic from "../../assets/pic.png"
 import Bg from "../../assets/Bg.mp4"
-
+// import { StarBackground } from "../StarBackground";
 const Home = () => {
   
   return (
@@ -11,7 +11,7 @@ const Home = () => {
     >
       <RevealOnScroll>
         <div className="relative flex flex-col items-center justify-center min-h-screen min-w-screen  text-center place-items-center z-10 px-4">
-          <video
+          {/* <video
             className="absolute top-0 left-0 w-full h-full object-cover -z-10 "
             autoPlay
             muted
@@ -20,7 +20,7 @@ const Home = () => {
           >
             <source src={Bg} type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
 
           <div className="w-43 h-43 md:w-53 md:h-53 lg:w-63 lg:h-63  rounded-full bg-gradient-to-r from-blue-500 to-purple-600 mb-20">
             <div className="w-full h-full flex justify-center items-center ">
