@@ -76,7 +76,7 @@ const Navbar = ({ menuOpen, setMenuOpen, darkmode, setDarkmode }) => {
               Contact
             </a>
           </div>
-          <div className="w-[100px] absolute bg-red-500">
+          <div className="w-[100px] absolute ">
             <img
               src={Night}
               alt="night-toggle"
