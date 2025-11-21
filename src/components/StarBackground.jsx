@@ -28,13 +28,12 @@ export const StarBackground = ({ darkmode  }) => {
 
     //    if (!starElement || !meteorElement) return;
     window.bg="white"
-       if (darkmode) {
-         window.bg="white"
+       if (!darkmode) {
+         window.bg = "blue-500";
          window.wid = "60px";
        } else {
-         window.bg = "blue-500";
-         window.wid="60px"
-       }
+         window.wid = "60px";
+                }
   }, [darkmode]);
 
   const generateStars = () => {
@@ -76,7 +75,9 @@ export const StarBackground = ({ darkmode  }) => {
       {stars.map((star) => (
         <div
           key={star.id}
-          className={`absolute rounded-full  custom-glow animate-pulse duration-[4000ms] ease-in-out bg-${bg} w-${wid}`}
+          className={`absolute rounded-full  custom-glow animate-pulse duration-[4000ms] ease-in-out ${
+            darkmode ? "bg-white" : "bg-"+bg
+          }   w-${wid}`}
           style={{
             width: star.size + "px",
             height: star.size + "px",
@@ -91,7 +92,9 @@ export const StarBackground = ({ darkmode  }) => {
       {meteors.map((meteor) => (
         <div
           key={meteor.id}
-          className={`absolute  rounded-full custom-glow animate-pulse  animate-meteor bg-${bg} w-${wid}`}
+          className={`absolute  rounded-full custom-glow animate-pulse  animate-meteor ${
+            darkmode ? "bg-white" : "bg-"+bg
+          }   w-${wid}`}
           style={{
             width: meteor.size + "px",
             height: meteor.size + "px",
