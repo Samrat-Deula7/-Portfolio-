@@ -27,7 +27,7 @@ export const StarBackground = ({ darkmode  }) => {
     //    const meteorElement = document.getElementById("meteor");
 
     //    if (!starElement || !meteorElement) return;
-
+    window.bg="white"
        if (darkmode) {
          window.bg="white"
          window.wid = "60px";
