@@ -75,9 +75,9 @@ export const StarBackground = ({ darkmode  }) => {
       {stars.map((star) => (
         <div
           key={star.id}
-          className={`absolute rounded-full  custom-glow animate-pulse duration-[4000ms] ease-in-out ${
-            darkmode ? "bg-white" : "bg-"+bg
-          }   w-${wid}`}
+          className={`absolute rounded-full   animate-pulse duration-[4000ms] ease-in-out ${
+            darkmode ? "custom-glow" : "dark-glow"
+          } ${darkmode ? "bg-white" : "bg-" + bg}   w-${wid}`}
           style={{
             width: star.size + "px",
             height: star.size + "px",
@@ -92,9 +92,9 @@ export const StarBackground = ({ darkmode  }) => {
       {meteors.map((meteor) => (
         <div
           key={meteor.id}
-          className={`absolute  rounded-full custom-glow animate-pulse  animate-meteor ${
-            darkmode ? "bg-white" : "bg-"+bg
-          }   w-${wid}`}
+          className={`absolute  rounded-full  animate-pulse  animate-meteor ${
+            darkmode ? "custom-glow" : "dark-glow"
+          } ${darkmode ? "bg-white" : "bg-" + bg}   w-${wid}`}
           style={{
             width: meteor.size + "px",
             height: meteor.size + "px",

@@ -122,5 +122,8 @@ html,body{
   .custom-glow {
     box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
   }
+  .dark-glow{
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  }
 }
 
