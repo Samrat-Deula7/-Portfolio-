@@ -55,6 +55,13 @@ html,body{
   color: #e5e7eb; /* light gray for headings in dark mode */
 }
 
+.darkShow{
+  background: #000;
+}
+.whiteShow{
+  background: white;
+}
+
 @layer utilities{
     @keyframes loading{
         0%{

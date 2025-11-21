@@ -4,18 +4,39 @@ import { useState } from "react"
 export const StarBackground = ({ darkmode  }) => {
   const [stars, setStars] = useState([]);
   const [meteors, setMeteors] = useState([]);
+ 
+//  useEffect(() => {
+//    const starElement = document.getElementById("star");
+//    const meteorElement = document.getElementById("meteor");
 
-  useEffect(() => { if (darkmode) {
-    window.bg = "white";
-  } else {
-    window.bg = "blue-600";
-  }}, [darkmode]);
-  
+//    if (darkmode) {
+//      starElement.classList.add("bg-red-500");
+//      meteorElement.classList.remove("bg-red-500");
+//    } else {
+//     meteorElement.classList.add("bg-blue-500");
+//     starElement.classList.remove("bg-blue-500");
+//    }
+//  }, [darkmode]);
+
+
   useEffect(() => {
     generateStars();
     generateMeteors();
-   
-  }, []);
+
+    //    const starElement = document.getElementById("star");
+    //    const meteorElement = document.getElementById("meteor");
+
+    //    if (!starElement || !meteorElement) return;
+
+       if (darkmode) {
+         window.bg="white"
+         window.wid = "60px";
+       } else {
+         window.bg = "blue-500";
+         window.wid="60px"
+       }
+  }, [darkmode]);
+
   const generateStars = () => {
     const numberOfStars = Math.floor(
       (window.innerWidth * window.innerHeight) / 10000
@@ -55,7 +76,7 @@ export const StarBackground = ({ darkmode  }) => {
       {stars.map((star) => (
         <div
           key={star.id}
-          className={`absolute rounded-full  custom-glow animate-pulse duration-[4000ms] ease-in-out bg-${bg}`}
+          className={`absolute rounded-full  custom-glow animate-pulse duration-[4000ms] ease-in-out bg-${bg} w-${wid}`}
           style={{
             width: star.size + "px",
             height: star.size + "px",
@@ -70,7 +91,7 @@ export const StarBackground = ({ darkmode  }) => {
       {meteors.map((meteor) => (
         <div
           key={meteor.id}
-          className={`absolute  rounded-full custom-glow animate-pulse  animate-meteor bg-${bg}`}
+          className={`absolute  rounded-full custom-glow animate-pulse  animate-meteor bg-${bg} w-${wid}`}
           style={{
             width: meteor.size + "px",
             height: meteor.size + "px",
