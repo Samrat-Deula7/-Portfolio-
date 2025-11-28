@@ -24,8 +24,8 @@ const About = () => {
               Passionate developer with expertise in building scalable web
               application and creating innovative solutions.
             </p>
-            <div className="grid place-items-center grid-cols-1 md:grid-cols-2   gap-6">
-              <div className="w-80 md:2xl bg-blue-500/10 px-2 py-3 border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
+            <div className="grid place-items-center grid-cols-1 md:grid-cols-2  gap-5 md:gap-20 xl:gap-60">
+              <div className="w-80 md:2xl bg-blue-500/10 px-2 py-3 border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all mb-6">
                 <h3 className="text-xl font-bold mb-4">Frontend</h3>
                 <div className="flex  justify-around items-center">
                   {/* These are the frontend skills */}
@@ -43,7 +43,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-80 md:2xl bg-blue-500/10 px-2 py-3 border rounded-xl border-blue-500 hover:-translate-y-1 transition-all">
+              <div className="w-80 md:2xl bg-blue-500/10 px-2 py-3 border rounded-xl border-blue-500 hover:-translate-y-1 transition-all mb-6">
                 <h3 className="text-xl font-bold mb-4">Backend</h3>
                 <div className="flex  justify-around items-center">
                   {/* These are the backend skills */}
@@ -110,14 +110,12 @@ const About = () => {
                     <br />
                     <span className="text-[14px] text-black ">
                       Completed the course in APU with <br />
-                      Relevant Coursework: Data Structures, Full stack dev, DevOps
-                      ...
+                      Relevant Coursework: Data Structures, Full stack dev,
+                      DevOps ...
                     </span>
                   </strong>{" "}
                   -APU University
-                  <div
-                    class="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "
-                  ></div>
+                  <div class="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "></div>
                 </div>
                 <p className="mt-[140px] ml-[80px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px]  transform duration-100 hover:-translate-y-2">
                   2028 +
@@ -139,9 +137,7 @@ const About = () => {
                       className="absolute left-40 -bottom-10 w-[80px] h-[80px] rounded-full"
                     />
                   </div>
-                  <div
-                    class="w-0 h-0 absolute -top-6 left-6 border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent  border-b-[15px] border-b-blue-500"
-                  ></div>
+                  <div class="w-0 h-0 absolute -top-6 left-6 border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent  border-b-[15px] border-b-blue-500"></div>
                 </div>
               </div>
             </div>
