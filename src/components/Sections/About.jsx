@@ -84,7 +84,7 @@ const About = () => {
               application and creating innovative solutions.
             </p>
             <div className=" flex flex-wrap items-center justify-around place-items-center  ">
-              <div className="flex flex-col items-center gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+              <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
                 <img src={ReactImg} alt="react" className="w-20  h-20 " />{" "}
                 <h4 className="text-md ">React</h4>
                 <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
@@ -99,7 +99,7 @@ const About = () => {
                 </h4>
               </div>
 
-              <div className="flex flex-col items-center gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+              <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
                 <img
                   src={TailwindCSSImg}
                   alt="tailwind"
@@ -118,7 +118,7 @@ const About = () => {
                 </h4>
               </div>
 
-              <div className="flex flex-col items-center gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+              <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
                 <img src={NodeImg} alt="react" className="w-10  h-10" />
                 <h4 className="text-md ">Node JS</h4>
                 <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
@@ -133,7 +133,7 @@ const About = () => {
                 </h4>
               </div>
 
-              <div className="flex flex-col items-center gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+              <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
                 <img src={ExpressImg} alt="tailwind" className="w-20 h-10" />{" "}
                 <h4 className="text-md ">Express</h4>
                 <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
@@ -148,7 +148,7 @@ const About = () => {
                 </h4>
               </div>
 
-              <div className="flex flex-col items-center gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+              <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
                 <img src={MongoImg} alt="tailwind" className="w-20 h-10" />
                 <h4 className="text-md ">MongoDB</h4>
                 <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
