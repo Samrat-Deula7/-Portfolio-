@@ -5,9 +5,18 @@ import NodeImg from "../../assets/node.png";
 import ExpressImg from "../../assets/express.png";
 import MongoImg from "../../assets/mongo.png";
 import Time from "../../assets/time.gif";
+import { useEffect,useState } from "react";
+
 const About = () => {
   // const frontendSkills = ["React", "TailwindCSS"];
   // const backendSkills = ["Node.js", "Express.js", "MongoDB"];
+  const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+  const handleScroll = () => setScrolled(window.scrollY > 600);
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
   return (
     <section
       id="about"
@@ -19,7 +28,7 @@ const About = () => {
             About me
           </h2>
 
-          <div className="place-items-center rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
+          {/* <div className="place-items-center rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
             <p className="text-gray-300 mb-6 text-xl font-bold ">
               Passionate developer with expertise in building scalable web
               application and creating innovative solutions.
@@ -28,7 +37,7 @@ const About = () => {
               <div className="w-80 md:2xl bg-blue-500/10 px-2 py-3 border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all mb-6">
                 <h3 className="text-xl font-bold mb-4">Frontend</h3>
                 <div className="flex  justify-around items-center">
-                  {/* These are the frontend skills */}
+                  
                   <div className="w-20  flex flex-col justify-center items-center min-h-10 bg-blue-500/10 px-2 py-2  border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
                     <img src={ReactImg} alt="react" className="w-10  h-10" />
                     <strong className="text-sm">React</strong>
@@ -46,7 +55,7 @@ const About = () => {
               <div className="w-80 md:2xl bg-blue-500/10 px-2 py-3 border rounded-xl border-blue-500 hover:-translate-y-1 transition-all mb-6">
                 <h3 className="text-xl font-bold mb-4">Backend</h3>
                 <div className="flex  justify-around items-center">
-                  {/* These are the backend skills */}
+
                   <div className="w-20  flex flex-col justify-center items-center min-h-10 bg-blue-500/10 px-2 py-2  border rounded-xl  border-blue-500 hover:-translate-y-1 transition-all">
                     <img src={NodeImg} alt="react" className="w-10  h-10" />
                     <strong className="text-sm">Node</strong>
@@ -66,11 +75,99 @@ const About = () => {
                 </div>
               </div>
             </div>
+          </div> */}
+
+          {/* This is the skills section */}
+          <div className="   rounded-xl p-8 border-white/10 border hover:-translate-y-1 hover:border-white/50  transition-all">
+            <p className="text-gray-300 mb-6 text-xl font-bold ">
+              Passionate developer with expertise in building scalable web
+              application and creating innovative solutions.
+            </p>
+            <div className=" flex flex-wrap items-center justify-around place-items-center  ">
+              <div className="flex flex-col items-center gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+                <img src={ReactImg} alt="react" className="w-20  h-20 " />{" "}
+                <h4 className="text-md ">React</h4>
+                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
+                  <div
+                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
+                      scrolled ? "w-[80%]" : ""
+                    }`}
+                  ></div>
+                </div>
+                <h4 className="duration-700 text-sm">
+                  {scrolled ? "80%" : "0%"}
+                </h4>
+              </div>
+
+              <div className="flex flex-col items-center gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+                <img
+                  src={TailwindCSSImg}
+                  alt="tailwind"
+                  className="w-20 h-10"
+                />{" "}
+                <h4 className="text-md ">Tailwind</h4>
+                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
+                  <div
+                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
+                      scrolled ? "w-[70%]" : ""
+                    }`}
+                  ></div>
+                </div>
+                <h4 className="duration-700 text-sm">
+                  {scrolled ? "70%" : "0%"}
+                </h4>
+              </div>
+
+              <div className="flex flex-col items-center gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+                <img src={NodeImg} alt="react" className="w-10  h-10" />
+                <h4 className="text-md ">Node JS</h4>
+                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
+                  <div
+                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
+                      scrolled ? "w-[80%]" : ""
+                    }`}
+                  ></div>
+                </div>
+                <h4 className="duration-700 text-sm">
+                  {scrolled ? "80%" : "0%"}
+                </h4>
+              </div>
+
+              <div className="flex flex-col items-center gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+                <img src={ExpressImg} alt="tailwind" className="w-20 h-10" />{" "}
+                <h4 className="text-md ">Express</h4>
+                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
+                  <div
+                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
+                      scrolled ? "w-[80%]" : ""
+                    }`}
+                  ></div>
+                </div>
+                <h4 className="duration-700 text-sm">
+                  {scrolled ? "80%" : "0%"}
+                </h4>
+              </div>
+
+              <div className="flex flex-col items-center gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+                <img src={MongoImg} alt="tailwind" className="w-20 h-10" />
+                <h4 className="text-md ">MongoDB</h4>
+                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
+                  <div
+                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
+                      scrolled ? "w-[80%]" : ""
+                    }`}
+                  ></div>
+                </div>
+                <h4 className="duration-700 text-sm">
+                  {scrolled ? "80%" : "0%"}
+                </h4>
+              </div>
+            </div>
           </div>
 
           {/* This only shows in small and middle size screen */}
           <div className="md:hidden grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 hover:border-white/50  transition-all">
               <h3 className="text-xl font-bold mb-4">🎓 Education</h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>
