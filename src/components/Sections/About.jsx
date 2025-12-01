@@ -5,17 +5,17 @@ import NodeImg from "../../assets/node.png";
 import ExpressImg from "../../assets/express.png";
 import MongoImg from "../../assets/mongo.png";
 import Time from "../../assets/time.gif";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
 const About = () => {
   // const frontendSkills = ["React", "TailwindCSS"];
   // const backendSkills = ["Node.js", "Express.js", "MongoDB"];
   const [scrolled, setScrolled] = useState(false);
-    useEffect(() => {
-  const handleScroll = () => setScrolled(window.scrollY > 600);
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 600);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section
@@ -85,7 +85,14 @@ const About = () => {
             </p>
             <div className=" flex flex-wrap items-center justify-around place-items-center  ">
               <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <img src={ReactImg} alt="react" className="w-20  h-20 " />{" "}
+                <div className="h-18">
+                  {" "}
+                  <img
+                    src={ReactImg}
+                    alt="react"
+                    className="w-20  h-20 "
+                  />{" "}
+                </div>
                 <h4 className="text-md ">React</h4>
                 <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
                   <div
@@ -100,11 +107,13 @@ const About = () => {
               </div>
 
               <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <img
-                  src={TailwindCSSImg}
-                  alt="tailwind"
-                  className="w-20 h-10"
-                />{" "}
+                <div className="h-18">
+                  <img
+                    src={TailwindCSSImg}
+                    alt="tailwind"
+                    className="w-20 h-10"
+                  />{" "}
+                </div>
                 <h4 className="text-md ">Tailwind</h4>
                 <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
                   <div
@@ -119,7 +128,9 @@ const About = () => {
               </div>
 
               <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <img src={NodeImg} alt="react" className="w-10  h-10" />
+                <div className="h-18">
+                  <img src={NodeImg} alt="react" className="w-20  h-20" />
+                </div>
                 <h4 className="text-md ">Node JS</h4>
                 <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
                   <div
@@ -133,8 +144,10 @@ const About = () => {
                 </h4>
               </div>
 
-              <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <img src={ExpressImg} alt="tailwind" className="w-20 h-10" />{" "}
+              <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-2 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+                <div className="h-18">
+                  <img src={ExpressImg} alt="tailwind" className="w-40 h-20" />{" "}
+                </div>
                 <h4 className="text-md ">Express</h4>
                 <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
                   <div
@@ -148,8 +161,10 @@ const About = () => {
                 </h4>
               </div>
 
-              <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <img src={MongoImg} alt="tailwind" className="w-20 h-10" />
+              <div className="flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+                <div className="h-18">
+                  <img src={MongoImg} alt="tailwind" className="w-50 h-20" />
+                </div>
                 <h4 className="text-md ">MongoDB</h4>
                 <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
                   <div
