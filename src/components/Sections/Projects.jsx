@@ -25,12 +25,12 @@ const Projects = () => {
                 Scalable note storing project with user authentication and user
                 based data retrival
               </p>
-              <div>
+              <div className="flex flex-wrap">
                 {["React", "Node.js", "MongoDB", "Express.js"].map(
                   (tech, key) => (
                     <span
                       key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)]   transition-all"
+                      className="bg-blue-500/10 text-blue-500 py-1 px-3 mx-1 my-1 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)]   transition-all"
                     >
                       {tech}
                     </span>
