@@ -7,32 +7,23 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative pt-18"
+      className="min-h-screen flex items-center justify-center relative pt-16"
     >
       <RevealOnScroll>
         <div className="relative flex flex-col items-center justify-center min-h-screen min-w-screen  text-center place-items-center z-10 px-4">
-          {/* <video
-            className="absolute top-0 left-0 w-full h-full object-cover -z-10 "
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src={Bg} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video> */}
+       
 
-          <div className="w-43 h-43 md:w-53 md:h-53 lg:w-63 lg:h-63  rounded-full bg-gradient-to-r from-blue-500 to-purple-600 mb-20">
+          <div className="w-43 h-43 md:w-53 md:h-53 lg:w-63 lg:h-63  rounded-full bg-gradient-to-r from-blue-500 to-purple-600 mb-20 md:mb-10">
             <div className="w-full h-full flex justify-center items-center ">
               <img
                 src={Pic}
                 alt="User"
-                className="w-40 h-40 md:w-50 md:h-50 lg:w-60 lg:h-60   bg-cover bg-center rounded-full overflow-clip"
+                className="w-40 h-40  lg:w-60 lg:h-60   bg-cover bg-center rounded-full overflow-clip"
               />
             </div>
           </div>
 
-          <div className="backdrop-blur-3xl  rounded-full px-3 py-2 mb-6">
+          <div className="backdrop-blur-3xl  rounded-full px-3 py-1 mb-6 md:mb-4">
             <h1 className="  text-3xl md:text-5xl lg:text-7xl font-bold  bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent ">
               Samrat Deula
             </h1>
