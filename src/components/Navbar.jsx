@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import Night from "../assets/night.png"
-import Light from "../assets/sun.png"
+import Night from "../assets/night.png";
+import Light from "../assets/sun.png";
 const Navbar = ({ menuOpen, setMenuOpen, darkmode, setDarkmode }) => {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -10,17 +10,17 @@ const Navbar = ({ menuOpen, setMenuOpen, darkmode, setDarkmode }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
- useEffect(() => {
-   // Remove both possible classes first
-   document.body.classList.remove("dark", "light");
+  useEffect(() => {
+    // Remove both possible classes first
+    document.body.classList.remove("dark", "light");
 
-   // Add the correct one based on darkmode
-   if (darkmode) {
-     document.body.classList.add("dark");
-   } else {
-     document.body.classList.add("light");
-   }
- }, [darkmode]);
+    // Add the correct one based on darkmode
+    if (darkmode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.add("light");
+    }
+  }, [darkmode]);
 
   return (
     // fixed top-0 left-0 right-0 z-50 transition-all duration-300

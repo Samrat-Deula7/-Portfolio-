@@ -18,6 +18,12 @@ html,body{
   color: #1a232f
  /* dark gray for headings in light mode */
 }
+
+.light a:hover{
+  color: #581c87; /* light gray for headings in dark mode */
+}
+
+
 .light p {
   color: #1a232f /* dark gray for headings in light mode */
 }
@@ -53,6 +59,10 @@ html,body{
 
 .dark a {
   color: #e5e7eb; /* light gray for headings in dark mode */
+}
+
+.dark a:hover{
+  color: #581c87; /* light gray for headings in dark mode */
 }
 .dark p {
   color: #e5e7eb; /* light gray for headings in dark mode */

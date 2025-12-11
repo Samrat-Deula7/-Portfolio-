@@ -7,6 +7,7 @@ import MongoImg from "../../assets/mongo.png";
 import GitImg from "../../assets/git.png"
 import AwsImg from "../../assets/aws.png"
 import Time from "../../assets/time.gif";
+import TsURL from "../../assets/typescript.svg"
 import { useEffect, useState } from "react";
 
 const About = () => {
@@ -182,6 +183,27 @@ const About = () => {
                 </div>
                 <h4 className="duration-700 text-sm">
                   {scrolled ? "10%" : "0%"}
+                </h4>
+              </div>
+
+              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+                <div className="h-18">
+                  <img
+                    src={TsURL}
+                    alt="Type Script"
+                    className="absolute top-6 left-2 w-30 h-20 rounded-2xl"
+                  />
+                </div>
+                <h4 className="text-md ">Type Script</h4>
+                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
+                  <div
+                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
+                      scrolled ? "w-[30%]" : ""
+                    }`}
+                  ></div>
+                </div>
+                <h4 className="duration-700 text-sm">
+                  {scrolled ? "30%" : "0%"}
                 </h4>
               </div>
             </div>
