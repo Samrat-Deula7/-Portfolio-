@@ -1,9 +1,8 @@
 import RevealOnScroll from "../../components/RevealOnScroll";
-import Pic from "../../assets/pic.png"
-import Bg from "../../assets/Bg.mp4"
+import Pic from "../../assets/pic.png";
+import Bg from "../../assets/Bg.mp4";
 // import { StarBackground } from "../StarBackground";
 const Home = () => {
-  
   return (
     <section
       id="home"
@@ -11,14 +10,12 @@ const Home = () => {
     >
       <RevealOnScroll>
         <div className="relative flex flex-col items-center justify-center min-h-screen min-w-screen  text-center place-items-center z-10 px-4">
-       
-
           <div className="w-43 h-43 md:w-53 md:h-53 lg:w-63 lg:h-63  rounded-full bg-gradient-to-r from-blue-500 to-purple-600 mb-20 md:mb-10">
             <div className="w-full h-full flex justify-center items-center ">
               <img
                 src={Pic}
                 alt="User"
-                className="w-40 h-40  lg:w-60 lg:h-60   bg-cover bg-center rounded-full overflow-clip"
+                className="w-40 h-40 md:w-50 md:h-50 lg:w-60 lg:h-60   bg-cover bg-center rounded-full overflow-clip"
               />
             </div>
           </div>
@@ -29,10 +26,10 @@ const Home = () => {
             </h1>
           </div>
           <div className="backdrop-blur-3xl  rounded-full px-3 py-2 mb-8">
-          <h4 className="text-white text-lg  max-w-lg mx-auto">
-            Hello, There I'm an full-stack developer who loves to build
-            intuative , creative and scalable applications.
-          </h4>
+            <h4 className="text-white text-lg  max-w-lg mx-auto">
+              Hello, There I'm an full-stack developer who loves to build
+              intuative , creative and scalable applications.
+            </h4>
           </div>
           <div className="flex justify-center space-x-4">
             <a
