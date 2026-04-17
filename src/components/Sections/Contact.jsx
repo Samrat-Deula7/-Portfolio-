@@ -5,6 +5,7 @@ import FbImg from "../../assets/facebook.png"
 import InstaImg from "../../assets/instagram.png"
 import LinkedinImg from "../../assets/linkedin.png"
 import FollowImg from "../../assets/follow.gif"
+import YT from "../../assets/YT.png"
 import emailjs from "emailjs-com";
 
 const Contact = () => {
@@ -113,6 +114,13 @@ const Contact = () => {
             >
               <img src={GithubImg} alt="git hub" className="w-10" />
               <span className="ml-4">Github</span>
+            </a>
+            <a
+              href="https://www.youtube.com/@SamratDeula-c4x3o"
+              className="flex justify-center items-center mb-2  p-3 w-65 rounded-xl bg-blue-500/10 border border-white hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]  transition-all"
+            >
+              <img src={YT} alt="git hub" className="w-10" />
+              <span className="ml-4">YouTube</span>
             </a>
             <a
               href="https://www.facebook.com/samrat.deula.52"
