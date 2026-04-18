@@ -133,14 +133,14 @@ const Contact = () => {
               href="https://www.instagram.com/deula.samrat/"
               className="flex justify-center items-center mb-2  p-3 w-65 rounded-xl bg-blue-500/10 border border-white hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]  transition-all"
             >
-              <img src={InstaImg} alt="git hub" className="w-10" />
+              <img src={InstaImg} alt="Instagram" className="w-10" />
               <span className="ml-4">Instagram</span>
             </a>
             <a
               href="https://www.linkedin.com/in/samrat-deula-412531369/"
               className="flex justify-center items-center mb-2  p-3 rounded-xl w-65 bg-blue-500/10 border border-white hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]  transition-all"
             >
-              <img src={LinkedinImg} alt="git hub" className="w-10" />
+              <img src={LinkedinImg} alt="Linkedin" className="w-10" />
               <span className="ml-4">Linkedin</span>
             </a>
           </div>
