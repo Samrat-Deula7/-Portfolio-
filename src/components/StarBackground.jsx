@@ -1,23 +1,22 @@
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect } from "react";
+import { useState } from "react";
 
-export const StarBackground = ({ darkmode  }) => {
+export const StarBackground = ({ darkmode }) => {
   const [stars, setStars] = useState([]);
   const [meteors, setMeteors] = useState([]);
- 
-//  useEffect(() => {
-//    const starElement = document.getElementById("star");
-//    const meteorElement = document.getElementById("meteor");
 
-//    if (darkmode) {
-//      starElement.classList.add("bg-red-500");
-//      meteorElement.classList.remove("bg-red-500");
-//    } else {
-//     meteorElement.classList.add("bg-blue-500");
-//     starElement.classList.remove("bg-blue-500");
-//    }
-//  }, [darkmode]);
+  //  useEffect(() => {
+  //    const starElement = document.getElementById("star");
+  //    const meteorElement = document.getElementById("meteor");
 
+  //    if (darkmode) {
+  //      starElement.classList.add("bg-red-500");
+  //      meteorElement.classList.remove("bg-red-500");
+  //    } else {
+  //     meteorElement.classList.add("bg-blue-500");
+  //     starElement.classList.remove("bg-blue-500");
+  //    }
+  //  }, [darkmode]);
 
   useEffect(() => {
     generateStars();
@@ -27,18 +26,18 @@ export const StarBackground = ({ darkmode  }) => {
     //    const meteorElement = document.getElementById("meteor");
 
     //    if (!starElement || !meteorElement) return;
-    window.bg="white"
-       if (!darkmode) {
-         window.bg = "blue-500";
-         window.wid = "60px";
-       } else {
-         window.wid = "60px";
-                }
+    window.bg = "white";
+    if (!darkmode) {
+      window.bg = "blue-500";
+      window.wid = "60px";
+    } else {
+      window.wid = "60px";
+    }
   }, [darkmode]);
 
   const generateStars = () => {
     const numberOfStars = Math.floor(
-      (window.innerWidth * window.innerHeight) / 10000
+      (window.innerWidth * window.innerHeight) / 10000,
     );
     const newStars = [];
 
