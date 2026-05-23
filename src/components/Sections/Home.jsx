@@ -1,5 +1,5 @@
 import RevealOnScroll from "../../components/RevealOnScroll";
-import Pic from "../../assets/pic.png";
+import Pic from "../../assets/Pic.png";
 import Bg from "../../assets/Bg.mp4";
 // import { StarBackground } from "../StarBackground";
 const Home = () => {
