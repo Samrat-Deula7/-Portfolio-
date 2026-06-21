@@ -17,6 +17,8 @@ import dotnet from "../../assets/.net.svg";
 import html from "../../assets/html.png";
 import css from "../../assets/css.png";
 import PragyaLogo from "../../assets/pragya.png";
+import NestJS from "../../assets/nestjs.png";
+import Python from "../../assets/Python.png";
 import { useEffect, useState } from "react";
 
 import AboutPopTimeLine from "./AboutPopTimeLine";
@@ -363,6 +365,48 @@ const About = ({ aboutPop, setAboutPop }) => {
                 </div>
                 <h4 className="duration-700 text-sm">
                   {scrolled ? "90%" : "0%"}
+                </h4>
+              </div>
+
+              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+                <div className="h-18">
+                  <img
+                    src={NestJS}
+                    alt="NestJS"
+                    className="absolute top-6 left-7 w-20 h-20 rounded-2xl"
+                  />
+                </div>
+                <h4 className="text-md ">Nest JS</h4>
+                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
+                  <div
+                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
+                      scrolled ? "w-[60%]" : ""
+                    }`}
+                  ></div>
+                </div>
+                <h4 className="duration-700 text-sm">
+                  {scrolled ? "60%" : "0%"}
+                </h4>
+              </div>
+
+              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
+                <div className="h-18">
+                  <img
+                    src={Python}
+                    alt="Python"
+                    className="absolute top-6 left-7 w-20 h-20 rounded-2xl"
+                  />
+                </div>
+                <h4 className="text-md ">Python</h4>
+                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
+                  <div
+                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
+                      scrolled ? "w-[60%]" : ""
+                    }`}
+                  ></div>
+                </div>
+                <h4 className="duration-700 text-sm">
+                  {scrolled ? "60%" : "0%"}
                 </h4>
               </div>
             </div>
