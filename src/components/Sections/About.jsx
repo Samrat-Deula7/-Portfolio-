@@ -6,16 +6,16 @@ import ExpressImg from "../../assets/express.png";
 import MongoImg from "../../assets/mongo.png";
 import SQL from "../../assets/SQL_SERVER.png";
 import PostSQL from "../../assets/PostgreSql.png";
-import GitImg from "../../assets/git.png"
-import AwsImg from "../../assets/aws.png"
+import GitImg from "../../assets/git.png";
+import AwsImg from "../../assets/aws.png";
 import Time from "../../assets/time.gif";
-import TsURL from "../../assets/typescript.svg"
-import JsURL from "../../assets/js.png"
-import C from "../../assets/c.png"
-import Csharp from "../../assets/csharp.png"
-import dotnet from "../../assets/.net.svg"
-import html from "../../assets/html.png"
-import css from "../../assets/css.png"
+import TsURL from "../../assets/typescript.svg";
+import JsURL from "../../assets/js.png";
+import C from "../../assets/c.png";
+import Csharp from "../../assets/csharp.png";
+import dotnet from "../../assets/.net.svg";
+import html from "../../assets/html.png";
+import css from "../../assets/css.png";
 import { useEffect, useState } from "react";
 
 const About = () => {
@@ -399,8 +399,26 @@ const About = () => {
           <div className="hidden md:flex">
             <div className="w-full flex flex-col justify-center items-center py-10 ">
               <h3 className="text-xl font-bold mb-4">🎓 Education</h3>
+
+              {/* This are each block of time line */}
               <div className="w-[70%] flex items-start ">
-                <div className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2">
+                {/* This is timeline block 1 */}
+                <div className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3">
+                  <strong className="text-purple-900 font-extrabold text-[17px]">
+                    BSC.IT in Computer Science:
+                    <br />
+                    <span className="text-[14px] text-black ">
+                      Completed the course in APU with <br />
+                      Relevant Coursework: Data Structures, Full stack dev,
+                      DevOps ...
+                    </span>
+                  </strong>{" "}
+                  -APU University
+                  <div class="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "></div>
+                </div>
+
+                {/* This is timeline block 2 */}
+                <div className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3">
                   <strong className="text-purple-900 font-extrabold text-[17px]">
                     BSC.IT in Computer Science:
                     <br />
@@ -417,11 +435,17 @@ const About = () => {
                   2028 +
                 </p>
               </div>
+
               {/* this is line */}
               <div className="bg-gradient-to-r  from-blue-500 to-purple-600   w-[70%] h-1 transform duration-100 hover:-translate-y-2 hover:border-0 cursor-pointer"></div>
-              <div className="w-[70%] flex items-end">
+
+              {/* This are each block of time line */}
+              <div className="w-[80%] flex items-end">
                 <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
                   (2025-2028)
+                </p>
+                <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
+                  (2026)
                 </p>
                 <div className="flex items-center justify-center relative w-[300px] h-[150px] mt-7 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:translate-y-2">
                   <div className="relative w-60 h-20 bg-blue-500 font-bold text-purple-900 rounded-2xl transition-transform animate-bounce px-4 py-4">
