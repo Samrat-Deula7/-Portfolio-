@@ -16,6 +16,7 @@ import Csharp from "../../assets/csharp.png";
 import dotnet from "../../assets/.net.svg";
 import html from "../../assets/html.png";
 import css from "../../assets/css.png";
+import PragyaLogo from "../../assets/pragya.png";
 import { useEffect, useState } from "react";
 
 import AboutPopTimeLine from "./AboutPopTimeLine";
@@ -370,7 +371,9 @@ const About = ({ aboutPop, setAboutPop }) => {
           {/* This only shows in small and middle size screen */}
           <div className="md:hidden grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 hover:border-white/50  transition-all">
-              <h3 className="text-xl font-bold mb-4">🎓 Education</h3>
+              <h3 className="text-xl font-bold mb-4 text-purple-500 xl:text-3xl">
+                Journey
+              </h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>
                   <strong>BSC.IT in Computer Science </strong> -APU University
@@ -401,17 +404,18 @@ const About = ({ aboutPop, setAboutPop }) => {
           {/* This shows in large size screen */}
           <div className="hidden md:flex">
             <div className="w-full flex flex-col justify-center items-center py-10 ">
-              <h3 className="text-xl font-bold mb-4">🎓 Education</h3>
+              <h3 className="text-xl font-bold mb-4 text-purple-500 xl:text-3xl">
+                Journey
+              </h3>
 
               {/* This are each block of time line */}
               <div className="w-[70%] flex items-start ">
                 {/* This is timeline block 1 */}
                 <div
                   className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3"
-                  onClick={() => {
-                    setAboutPop(true);
-                    console.log(aboutPop);
-                  }}
+                  onClick={() =>
+                    setAboutPop({ ...aboutPop, type: "2025-2028", isOn: true })
+                  }
                 >
                   <strong className="text-purple-900 font-extrabold text-[17px]">
                     BSC.IT in Computer Science:
@@ -429,16 +433,23 @@ const About = ({ aboutPop, setAboutPop }) => {
                 {/* This is timeline block 2 */}
                 <div
                   className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3"
-                  onClick={() => setAboutPop(true)}
+                  onClick={() =>
+                    setAboutPop({ ...aboutPop, type: "2026", isOn: true })
+                  }
                 >
                   <strong className="text-purple-900 font-extrabold text-[17px]">
                     Backend Internship at:
-                    <br />
                     <span className="text-[14px] text-black ">
-                      Pragya Technologies. <br />
+                      <div className="flex items-center justify-start">
+                        <img
+                          src={PragyaLogo}
+                          alt="Pragya Logo"
+                          className="w-13"
+                        />
+                        Pragya Technologies.
+                      </div>
                       <span className="text-[14px] text-black ">
-                        I am currently working as a Backend Intern at Pragya
-                        Technologies, where I focus on ...
+                        I am currently working as a Backend Intern at Pragya ...
                       </span>
                     </span>
                   </strong>{" "}
@@ -460,10 +471,7 @@ const About = ({ aboutPop, setAboutPop }) => {
                 <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
                   (2026)
                 </p>
-                <div
-                  className="flex items-center justify-center relative -right-25 w-[300px] h-[150px] mt-7 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:translate-y-2"
-                  onClick={() => setAboutPop(true)}
-                >
+                <div className="flex items-center justify-center pointer-events-none cursor-not-allowed relative -right-25 w-[300px] h-[150px] mt-7 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)]    text-black transform duration-100 hover:translate-y-2 ">
                   <div className="relative w-60 h-20 bg-blue-500 font-bold text-purple-900 rounded-2xl transition-transform animate-bounce px-4 py-4">
                     Currently completing my bachelor's degree{" "}
                     <span className="font-extrabold">!!</span>{" "}

@@ -11,12 +11,12 @@ import { useEffect } from "react";
 function App({ darkmode, setDarkmode }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [aboutPop, setAboutPop] = useState(false);
+  const [aboutPop, setAboutPop] = useState({ type: "", isOn: false });
 
   // The following useEffect prevents the page form scrolling when the hamburger icon is open
 
   useEffect(() => {
-    if (menuOpen) {
+    if (menuOpen || aboutPop.isOn) {
       const scrollY = window.scrollY;
       document.body.style.position = "fixed";
       document.body.style.top = `-${scrollY}px`;
@@ -32,7 +32,7 @@ function App({ darkmode, setDarkmode }) {
       document.body.style.overflow = "";
       window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
-  }, [menuOpen]);
+  }, [menuOpen, aboutPop.isOn]);
   return (
     <>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
