@@ -388,14 +388,19 @@ const About = ({ aboutPop, setAboutPop }) => {
               <h3 className="text-xl font-bold mb-4">👩🏻‍💻 Work Experience</h3>
               <div className="space-y-4 text-gray-300">
                 <div>
-                  <h4 className="font-semibold">
-                    software Engineer at xyz company{" "}
-                  </h4>
-                  <p>😅 Haven't started working</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold">Intern at xyz company </h4>
-                  <p>😅 Haven't started working</p>
+                  <h4 className="font-bold text-2xl text-purple-500">
+                    Backend Internship at:
+                  </h4>{" "}
+                  <br />
+                  <p className="text-gray-600">
+                    I am currently working as a Backend Intern at Pragya
+                    Technologies, where I focus on designing and building
+                    backend APIs. My work involves leveraging PostgreSQL for
+                    database management and ensuring efficient, scalable backend
+                    solutions. This internship is helping me strengthen my
+                    skills in backend development, API design, and database
+                    optimization while contributing to real-world projects.
+                  </p>
                 </div>
               </div>
             </div>
