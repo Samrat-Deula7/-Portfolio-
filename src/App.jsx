@@ -8,9 +8,10 @@ import Projects from "./components/Sections/Projects";
 import Contact from "./components/Sections/Contact";
 import { useEffect } from "react";
 
-function App({  darkmode, setDarkmode }) {
+function App({ darkmode, setDarkmode }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [aboutPop, setAboutPop] = useState(false);
 
   // The following useEffect prevents the page form scrolling when the hamburger icon is open
 
@@ -49,7 +50,7 @@ function App({  darkmode, setDarkmode }) {
         />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
-        <About />
+        <About aboutPop={aboutPop} setAboutPop={setAboutPop} />
         <Projects />
         <Contact />
       </div>

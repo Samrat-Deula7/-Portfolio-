@@ -18,7 +18,9 @@ import html from "../../assets/html.png";
 import css from "../../assets/css.png";
 import { useEffect, useState } from "react";
 
-const About = () => {
+import AboutPopTimeLine from "./AboutPopTimeLine";
+
+const About = ({ aboutPop, setAboutPop }) => {
   // const frontendSkills = ["React", "TailwindCSS"];
   // const backendSkills = ["Node.js", "Express.js", "MongoDB"];
   const [scrolled, setScrolled] = useState(false);
@@ -33,6 +35,7 @@ const About = () => {
       id="about"
       className="min-h-screen flex items-center justify-center pt-20"
     >
+      <AboutPopTimeLine aboutPop={aboutPop} setAboutPop={setAboutPop} />
       <RevealOnScroll>
         <div className="max-w-7xl mx-auto px-4 md:w-3xl lg:w-5xl xl:w-7xl">
           <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
@@ -420,15 +423,16 @@ const About = () => {
                 {/* This is timeline block 2 */}
                 <div className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3">
                   <strong className="text-purple-900 font-extrabold text-[17px]">
-                    BSC.IT in Computer Science:
+                    Backend Internship at:
                     <br />
                     <span className="text-[14px] text-black ">
-                      Completed the course in APU with <br />
-                      Relevant Coursework: Data Structures, Full stack dev,
-                      DevOps ...
+                      Pragya Technologies. <br />
+                      <span className="text-[14px] text-black ">
+                        I am currently working as a Backend Intern at Pragya
+                        Technologies, where I focus on ...
+                      </span>
                     </span>
                   </strong>{" "}
-                  -APU University
                   <div class="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "></div>
                 </div>
                 <p className="mt-[140px] ml-[80px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px]  transform duration-100 hover:-translate-y-2">
@@ -447,7 +451,7 @@ const About = () => {
                 <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
                   (2026)
                 </p>
-                <div className="flex items-center justify-center relative w-[300px] h-[150px] mt-7 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:translate-y-2">
+                <div className="flex items-center justify-center relative -right-25 w-[300px] h-[150px] mt-7 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:translate-y-2">
                   <div className="relative w-60 h-20 bg-blue-500 font-bold text-purple-900 rounded-2xl transition-transform animate-bounce px-4 py-4">
                     Currently completing my bachelor's degree{" "}
                     <span className="font-extrabold">!!</span>{" "}
