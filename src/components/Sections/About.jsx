@@ -406,7 +406,13 @@ const About = ({ aboutPop, setAboutPop }) => {
               {/* This are each block of time line */}
               <div className="w-[70%] flex items-start ">
                 {/* This is timeline block 1 */}
-                <div className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3">
+                <div
+                  className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3"
+                  onClick={() => {
+                    setAboutPop(true);
+                    console.log(aboutPop);
+                  }}
+                >
                   <strong className="text-purple-900 font-extrabold text-[17px]">
                     BSC.IT in Computer Science:
                     <br />
@@ -417,11 +423,14 @@ const About = ({ aboutPop, setAboutPop }) => {
                     </span>
                   </strong>{" "}
                   -APU University
-                  <div class="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "></div>
+                  <div className="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "></div>
                 </div>
 
                 {/* This is timeline block 2 */}
-                <div className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3">
+                <div
+                  className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3"
+                  onClick={() => setAboutPop(true)}
+                >
                   <strong className="text-purple-900 font-extrabold text-[17px]">
                     Backend Internship at:
                     <br />
@@ -433,7 +442,7 @@ const About = ({ aboutPop, setAboutPop }) => {
                       </span>
                     </span>
                   </strong>{" "}
-                  <div class="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "></div>
+                  <div className="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "></div>
                 </div>
                 <p className="mt-[140px] ml-[80px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px]  transform duration-100 hover:-translate-y-2">
                   2028 +
@@ -451,7 +460,10 @@ const About = ({ aboutPop, setAboutPop }) => {
                 <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
                   (2026)
                 </p>
-                <div className="flex items-center justify-center relative -right-25 w-[300px] h-[150px] mt-7 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:translate-y-2">
+                <div
+                  className="flex items-center justify-center relative -right-25 w-[300px] h-[150px] mt-7 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:translate-y-2"
+                  onClick={() => setAboutPop(true)}
+                >
                   <div className="relative w-60 h-20 bg-blue-500 font-bold text-purple-900 rounded-2xl transition-transform animate-bounce px-4 py-4">
                     Currently completing my bachelor's degree{" "}
                     <span className="font-extrabold">!!</span>{" "}
@@ -461,7 +473,7 @@ const About = ({ aboutPop, setAboutPop }) => {
                       className="absolute left-40 -bottom-10 w-[80px] h-[80px] rounded-full"
                     />
                   </div>
-                  <div class="w-0 h-0 absolute -top-6 left-6 border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent  border-b-[15px] border-b-blue-500"></div>
+                  <div className="w-0 h-0 absolute -top-6 left-6 border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent  border-b-[15px] border-b-blue-500"></div>
                 </div>
               </div>
             </div>
