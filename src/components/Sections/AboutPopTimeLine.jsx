@@ -31,7 +31,7 @@ const AboutPopTimeLine = ({ aboutPop, setAboutPop }) => {
       setTitle(timeLineData[1].title);
       setBody(timeLineData[1].body);
       setImage(timeLineData[1].image);
-    } 
+    }
   }, [aboutPop.type]);
 
   return (
@@ -48,7 +48,12 @@ const AboutPopTimeLine = ({ aboutPop, setAboutPop }) => {
         }`}
       >
         <button
-          onClick={() => setAboutPop({ ...aboutPop, isOn: false })}
+          onClick={() => {
+            setAboutPop({ ...aboutPop,type:"", isOn: false });
+            setTitle("");
+            setBody("");
+            setImage(null);
+          }}
           className="absolute top-4 right-6 text-xl lg:text-3xl  focus:outline-none cursor-pointer text-white"
           aria-label="Close button"
         >
@@ -63,7 +68,6 @@ const AboutPopTimeLine = ({ aboutPop, setAboutPop }) => {
           <p className="text-gray-600">{Body}</p>
 
           {/* if underCompletion is true */}
-        
         </div>
       </div>
     </div>
