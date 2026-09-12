@@ -70,7 +70,7 @@ const Contact = () => {
             <p className="text-[#AD8B73] font-bold tracking-widest uppercase text-sm text-center mb-2">
               Let's Talk
             </p>
-            <h2 className="text-4xl md:text-4xl 2xl:text-5xl font-bold mb-8 bg-gradient-to-r from-[#AD8B73] to-[#CEAB93] bg-clip-text text-transparent text-center">
+            <h2 className="text-4xl md:text-4xl 2xl:text-5xl font-bold mb-8 bg-gradient-to-r from-[#AD8B73] via-[#CEAB93] to-[#AD8B73] bg-clip-text text-transparent text-center animate-gradient-text">
               Get In Touch
             </h2>
             <form className="space-y-6" onSubmit={handleSubmit}>
@@ -81,7 +81,7 @@ const Contact = () => {
                   name="name"
                   required
                   value={formData.name}
-                  className="warm-input w-full bg-[#FFFBE9] border border-[#AD8B73]/20 rounded-xl px-4 py-3 text-[#3E2F24] placeholder-[#6B5847]/50 transition"
+                  className="warm-input glass w-full rounded-xl px-4 py-3 text-[#3E2F24] placeholder-[#6B5847]/50 transition"
                   placeholder="Your name..."
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -95,7 +95,7 @@ const Contact = () => {
                   name="email"
                   required
                   value={formData.email}
-                  className="warm-input w-full bg-[#FFFBE9] border border-[#AD8B73]/20 rounded-xl px-4 py-3 text-[#3E2F24] placeholder-[#6B5847]/50 transition"
+                  className="warm-input glass w-full rounded-xl px-4 py-3 text-[#3E2F24] placeholder-[#6B5847]/50 transition"
                   placeholder="example@gmail.com"
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -109,7 +109,7 @@ const Contact = () => {
                   required
                   value={formData.message}
                   rows={5}
-                  className="warm-input w-full bg-[#FFFBE9] border border-[#AD8B73]/20 rounded-xl px-4 py-3 text-[#3E2F24] placeholder-[#6B5847]/50 transition resize-vertical"
+                  className="warm-input glass w-full rounded-xl px-4 py-3 text-[#3E2F24] placeholder-[#6B5847]/50 transition resize-vertical"
                   placeholder="Your message..."
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -118,15 +118,15 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#AD8B73] text-[#FFFBE9] py-3 px-6 rounded-full font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(173,139,115,0.4)]"
+                className="btn-sheen w-full bg-gradient-to-r from-[#AD8B73] to-[#96755f] text-[#FFFBE9] py-3 px-6 rounded-full font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(173,139,115,0.4)]"
               >
                 Send Message
               </button>
             </form>
           </div>
 
-          {/* Socials */}
-          <div className="flex flex-col justify-center items-center bg-[#E3CAA5]/30 px-4 py-6 w-[300px] 2xl:w-[350px] rounded-2xl duration-200 hover:-translate-y-1 border border-[#AD8B73]/15">
+          {/* Socials — glass panel */}
+          <div className="glass-strong flex flex-col justify-center items-center px-4 py-6 w-[300px] 2xl:w-[350px] rounded-2xl duration-200 hover:-translate-y-1">
             <h2 className="flex items-center space-x-3 text-2xl md:text-3xl mb-8 bg-gradient-to-r from-[#AD8B73] to-[#CEAB93] bg-clip-text text-transparent text-center font-bold">
               <span>My Contacts</span>
               <img
@@ -141,7 +141,7 @@ const Contact = () => {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center items-center mb-2 p-3 w-65 rounded-xl bg-[#FFFBE9] border border-[#AD8B73]/20 hover:-translate-y-1 hover:border-[#AD8B73]/40 hover:shadow-[0_8px_20px_rgba(173,139,115,0.2)] transition-all"
+                className="spotlight glass flex justify-center items-center mb-2 p-3 w-65 rounded-xl hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(173,139,115,0.25)] transition-all"
               >
                 <img src={s.img} alt={s.label} className="w-10" />
                 <span className="ml-4 text-[#3E2F24] font-semibold">

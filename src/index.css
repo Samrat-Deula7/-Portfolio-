@@ -10,6 +10,19 @@ body {
   color: #3e2f24;
 }
 
+/* Hide native cursor on precise pointers (custom cursor takes over) */
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  label,
+  [role="button"] {
+    cursor: none;
+  }
+}
+
 /* ===== Warm palette helpers ===== */
 :root {
   --brown: #ad8b73;
@@ -20,7 +33,7 @@ body {
   --ink-soft: #6b5847;
 }
 
-/* ===== Skill card keyframes ===== */
+/* ===== Skill card / blob keyframes ===== */
 @keyframes blobMorph {
   0%,
   100% {
@@ -33,6 +46,54 @@ body {
 
 .animate-blob {
   animation: blobMorph 9s ease-in-out infinite;
+}
+
+/* ===== Floating elements ===== */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 9s ease-in-out infinite;
+}
+
+/* ===== Animated gradient text ===== */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-text {
+  background-size: 200% auto;
+  animation: gradientMove 5s ease infinite;
+}
+
+/* ===== Slow spin (decorative rings) ===== */
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 14s linear infinite;
 }
 
 @layer utilities {
@@ -61,131 +122,188 @@ body {
   }
 }
 
+/* ===== Scroll reveal (upgraded: blur + lift) ===== */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px) scale(0.98);
+  filter: blur(8px);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease;
+  will-change: opacity, transform, filter;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
 
-/* Warm glow shadows */
-.warm-glow {
-  box-shadow: 0 0 10px 2px rgba(173, 139, 115, 0.4);
-}
-.warm-glow-lg {
-  box-shadow: 0 24px 50px rgba(173, 139, 115, 0.35);
-}
-
-/* Timeline gradient blocks */
-.timeline-block {
-  background: linear-gradient(to bottom right, #fffbe9, #e3caa5);
+/* ===== Glassmorphism ===== */
+.glass {
+  background: rgba(255, 251, 233, 0.5);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 8px 32px rgba(173, 139, 115, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-/* Form focus styles */
-.warm-input:focus {
-  border-color: #ad8b73 !important;
-  background-color: rgba(173, 139, 115, 0.05) !important;
-  outline: none;
+.glass-strong {
+  background: rgba(255, 251, 233, 0.65);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 12px 40px rgba(173, 139, 115, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
-::selection {
-  background: #e3caa5;
-  color: #3e2f24;
+/* ===== Spotlight hover (cursor-tracking glow) ===== */
+.spotlight {
+  position: relative;
+  overflow: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    340px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(227, 202, 165, 0.45),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
 }
-::-webkit-scrollbar-track {
-  background: #fffbe9;
+
+.spotlight:hover::before {
+  opacity: 1;
 }
-::-webkit-scrollbar-thumb {
-  background: #ceab93;
-  border-radius: 5px;
+
+.spotlight > * {
+  position: relative;
+  z-index: 1;
 }
-::-webkit-scrollbar-thumb:hover {
+
+/* ===== Animated gradient border on hover ===== */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #ad8b73, #e3caa5, #ceab93, #ad8b73);
+  background-size: 300% 300%;
+  animation: gradientMove 4s ease infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.gradient-border:hover::after {
+  opacity: 1;
+}
+
+/* ===== 3D tilt ===== */
+.tilt {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.tilt-inner {
+  transform: translateZ(30px);
+  transform-style: preserve-3d;
+}
+
+/* ===== Button sheen sweep ===== */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.btn-sheen:hover::after {
+  left: 130%;
+}
+
+/* ===== Custom cursor ===== */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 9999px;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
   background: #ad8b73;
 }
-@import "tailwindcss";
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
-  background: #fffbe9;
-  color: #3e2f24;
-}
-
-/* ===== Warm palette helpers ===== */
-:root {
-  --brown: #ad8b73;
-  --taupe: #ceab93;
-  --sand: #e3caa5;
-  --cream: #fffbe9;
-  --ink: #3e2f24;
-  --ink-soft: #6b5847;
-}
-
-/* ===== Skill card keyframes ===== */
-@keyframes blobMorph {
-  0%,
-  100% {
-    border-radius: 38% 62% 55% 45% / 45% 42% 58% 55%;
-  }
-  50% {
-    border-radius: 55% 45% 40% 60% / 55% 58% 42% 45%;
-  }
-}
-
-.animate-blob {
-  animation: blobMorph 9s ease-in-out infinite;
-}
-
-@layer utilities {
-  @keyframes loading {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(250%);
-    }
-  }
-  @keyframes blink {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-  }
-  .animate-loading-bar {
-    animation: loading 0.8s ease infinite;
-  }
-  .animate-blink {
-    animation: blink 0.8s step-end infinite;
-  }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(173, 139, 115, 0.7);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    width 0.25s ease,
+    height 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.cursor-ring.is-hover {
+  width: 58px;
+  height: 58px;
+  background: rgba(227, 202, 165, 0.25);
+  border-color: rgba(173, 139, 115, 0.35);
+}
+
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
 }
 
 /* Warm glow shadows */

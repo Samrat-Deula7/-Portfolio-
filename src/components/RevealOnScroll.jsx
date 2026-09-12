@@ -1,23 +1,41 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react";
 
-const RevealOnScroll=({children})=>{
-    const ref=useRef(null);
+/**
+ * Upgraded reveal wrapper:
+ * - IntersectionObserver (fires once, then unobserves)
+ * - blur + lift + slight scale for a premium feel
+ * - `delay` prop for staggered cascades
+ */
+const RevealOnScroll = ({ children, delay = 0, className = "" }) => {
+  const ref = useRef(null);
 
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            ref.current.classList.add("visible");
-          }
-        },
-        { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
-      );
-      if (ref.current) {
-        observer.observe(ref.current);
-        return () => observer.disconnect;
-      }
-    }, []);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
 
-    return (<div ref={ref} className="reveal">{children}</div>)
-}
-export default RevealOnScroll
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("visible");
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`reveal ${className}`}
+      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default RevealOnScroll;

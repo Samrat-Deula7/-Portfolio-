@@ -6,6 +6,7 @@ import Home from "./components/Sections/Home";
 import About from "./components/Sections/About";
 import Projects from "./components/Sections/Projects";
 import Contact from "./components/Sections/Contact";
+import CustomCursor from "./components/CustomCursor";
 import { useEffect } from "react";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
+        <CustomCursor />
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
