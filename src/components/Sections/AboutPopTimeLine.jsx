@@ -1,4 +1,3 @@
-import { Title } from "@radix-ui/react-toast";
 import TechspireBanner from "../../assets/TechspireBanner.jpg";
 import PragyaBanner from "../../assets/PragyaBanner.png";
 import { useEffect, useState } from "react";
@@ -7,7 +6,7 @@ const AboutPopTimeLine = ({ aboutPop, setAboutPop }) => {
   const timeLineData = [
     {
       title: "BSC.IT in Computer Science:",
-      body: "At present, I am pursuing a Bachelor of Science in Information Technology (BSCIT), which is further enhancing my knowledge of backend systems, databases, and emerging web technologies. This ongoing program is allowing me to deepen my expertise in software development while gaining exposure to collaborative projects and industry‑oriented practices. By combining my completed coursework with my current studies, I am steadily advancing toward becoming a well‑rounded IT professional with strong capabilities in both theoretical and applied aspects of computing.",
+      body: "At present, I am pursuing a Bachelor of Science in Information Technology (BSCIT), which is further enhancing my knowledge of backend systems, databases, and emerging web technologies. This ongoing program is allowing me to deepen my expertise in software development while gaining exposure to collaborative projects and industry-oriented practices. By combining my completed coursework with my current studies, I am steadily advancing toward becoming a well-rounded IT professional with strong capabilities in both theoretical and applied aspects of computing.",
       image: TechspireBanner,
     },
     {
@@ -20,7 +19,6 @@ const AboutPopTimeLine = ({ aboutPop, setAboutPop }) => {
   let [Title, setTitle] = useState("");
   let [Body, setBody] = useState("");
   let [Image, setImage] = useState(null);
-  let [underCompletion, setUnderCompletion] = useState(false);
 
   useEffect(() => {
     if (aboutPop.type === "2025-2028") {
@@ -36,38 +34,36 @@ const AboutPopTimeLine = ({ aboutPop, setAboutPop }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 min-w-screen  bg-transparent z-40 flex flex-col items-center justify-center transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 min-w-screen bg-[#3E2F24]/40 backdrop-blur-sm z-40 flex flex-col items-center justify-center transition-all duration-300 ease-in-out ${
         aboutPop.isOn
-          ? "h-screen opacity-100 pointer-events-auto "
+          ? "h-screen opacity-100 pointer-events-auto"
           : "h-0 opacity-0 pointer-events-none scale-0"
       }`}
     >
       <div
-        className={`relative w-[700px] h-auto text-center bg-[#10172a] rounded-2xl py-3 px-2 ${
+        className={`relative w-[90%] max-w-[700px] h-auto text-center bg-[#FFFBE9] border border-[#AD8B73]/20 rounded-2xl py-3 px-2 shadow-[0_24px_60px_rgba(62,47,36,0.3)] ${
           aboutPop.isOn ? "animate-popup" : ""
         }`}
       >
         <button
           onClick={() => {
-            setAboutPop({ ...aboutPop,type:"", isOn: false });
+            setAboutPop({ ...aboutPop, type: "", isOn: false });
             setTitle("");
             setBody("");
             setImage(null);
           }}
-          className="absolute top-4 right-6 text-xl lg:text-3xl  focus:outline-none cursor-pointer text-white"
+          className="absolute top-4 right-6 text-xl lg:text-3xl focus:outline-none cursor-pointer text-[#AD8B73] hover:text-[#96755f]"
           aria-label="Close button"
         >
           &times;
         </button>
-        <div className="text-white">{aboutPop.type}</div>
-        <div className="text-white">
-          <h1 className="font-bold text-2xl text-purple-500">{Title}</h1>
+        <div className="text-[#AD8B73] font-bold">{aboutPop.type}</div>
+        <div>
+          <h1 className="font-bold text-2xl text-[#AD8B73]">{Title}</h1>
           <br />
-          <img src={Image} alt="" />
+          <img src={Image} alt="" className="rounded-xl mx-auto" />
           <br />
-          <p className="text-gray-600">{Body}</p>
-
-          {/* if underCompletion is true */}
+          <p className="text-[#6B5847] px-4 pb-4">{Body}</p>
         </div>
       </div>
     </div>

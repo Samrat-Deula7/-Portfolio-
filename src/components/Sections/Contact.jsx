@@ -1,11 +1,11 @@
 import { useState } from "react";
 import RevealOnScroll from "../RevealOnScroll";
-import GithubImg from "../../assets/github.png"
-import FbImg from "../../assets/facebook.png"
-import InstaImg from "../../assets/instagram.png"
-import LinkedinImg from "../../assets/linkedin.png"
-import FollowImg from "../../assets/follow.gif"
-import YT from "../../assets/YT.png"
+import GithubImg from "../../assets/github.png";
+import FbImg from "../../assets/facebook.png";
+import InstaImg from "../../assets/instagram.png";
+import LinkedinImg from "../../assets/linkedin.png";
+import FollowImg from "../../assets/follow.gif";
+import YT from "../../assets/YT.png";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
@@ -15,27 +15,48 @@ const Contact = () => {
     message: "",
   });
 
-
-
   const handleSubmit = (e) => {
-    const SERVICE_ID=import.meta.env.VITE_SERVICE_ID;
-    const TEMPLATE_ID=import.meta.env.VITE_TEMPLATE_ID;
-    const PUBLIC_KEY=import.meta.env.VITE_PUBLIC_KEY;
-    
+    const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+
     e.preventDefault();
     emailjs
-      .sendForm(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        e.target,
-        PUBLIC_KEY      
-      )
+      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
       .then((result) => {
-        alert("Message send");
+        alert("Message sent!");
         setFormData({ name: "", email: "", message: "" });
       })
-      .catch("Oops! Something went wrong. Please try again");
+      .catch(() => alert("Oops! Something went wrong. Please try again"));
   };
+
+  const socials = [
+    {
+      href: "https://github.com/Samrat-Deula7",
+      img: GithubImg,
+      label: "GitHub",
+    },
+    {
+      href: "https://www.youtube.com/@SamratDeula-c4x3o",
+      img: YT,
+      label: "YouTube",
+    },
+    {
+      href: "https://www.facebook.com/samrat.deula.52",
+      img: FbImg,
+      label: "Facebook",
+    },
+    {
+      href: "https://www.instagram.com/deula.samrat/",
+      img: InstaImg,
+      label: "Instagram",
+    },
+    {
+      href: "https://www.linkedin.com/in/samrat-deula-412531369/",
+      img: LinkedinImg,
+      label: "LinkedIn",
+    },
+  ];
 
   return (
     <section
@@ -43,9 +64,13 @@ const Contact = () => {
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className="flex flex-col lg:flex-row justify-between items-center space-y-5  lg:space-x-15 ">
-          <div className="px-4 w-[300px]  2xl:w-[800px] ">
-            <h2 className="text-4xl md:text-4xl 2xl:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
+        <div className="flex flex-col lg:flex-row justify-between items-center space-y-5 lg:space-x-15">
+          {/* Form */}
+          <div className="px-4 w-[300px] 2xl:w-[800px]">
+            <p className="text-[#AD8B73] font-bold tracking-widest uppercase text-sm text-center mb-2">
+              Let's Talk
+            </p>
+            <h2 className="text-4xl md:text-4xl 2xl:text-5xl font-bold mb-8 bg-gradient-to-r from-[#AD8B73] to-[#CEAB93] bg-clip-text text-transparent text-center">
               Get In Touch
             </h2>
             <form className="space-y-6" onSubmit={handleSubmit}>
@@ -56,8 +81,8 @@ const Contact = () => {
                   name="name"
                   required
                   value={formData.name}
-                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                  placeholder="Name...."
+                  className="warm-input w-full bg-[#FFFBE9] border border-[#AD8B73]/20 rounded-xl px-4 py-3 text-[#3E2F24] placeholder-[#6B5847]/50 transition"
+                  placeholder="Your name..."
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
@@ -70,7 +95,7 @@ const Contact = () => {
                   name="email"
                   required
                   value={formData.email}
-                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                  className="warm-input w-full bg-[#FFFBE9] border border-[#AD8B73]/20 rounded-xl px-4 py-3 text-[#3E2F24] placeholder-[#6B5847]/50 transition"
                   placeholder="example@gmail.com"
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -83,9 +108,9 @@ const Contact = () => {
                   name="message"
                   required
                   value={formData.message}
-                  row={5}
-                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                  placeholder="Your Message..."
+                  rows={5}
+                  className="warm-input w-full bg-[#FFFBE9] border border-[#AD8B73]/20 rounded-xl px-4 py-3 text-[#3E2F24] placeholder-[#6B5847]/50 transition resize-vertical"
+                  placeholder="Your message..."
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
@@ -93,14 +118,16 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                className="w-full bg-[#AD8B73] text-[#FFFBE9] py-3 px-6 rounded-full font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(173,139,115,0.4)]"
               >
                 Send Message
               </button>
             </form>
           </div>
-          <div className="flex flex-col justify-center items-center bg-blue-50/10 px-4 py-6 w-[300px]  2xl:w-[350px] rounded-2xl duration-200 hover:-translate-y-1">
-            <h2 className="flex items-center space-x-3 text-2xl md:text-3xl   mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
+
+          {/* Socials */}
+          <div className="flex flex-col justify-center items-center bg-[#E3CAA5]/30 px-4 py-6 w-[300px] 2xl:w-[350px] rounded-2xl duration-200 hover:-translate-y-1 border border-[#AD8B73]/15">
+            <h2 className="flex items-center space-x-3 text-2xl md:text-3xl mb-8 bg-gradient-to-r from-[#AD8B73] to-[#CEAB93] bg-clip-text text-transparent text-center font-bold">
               <span>My Contacts</span>
               <img
                 src={FollowImg}
@@ -108,41 +135,20 @@ const Contact = () => {
                 className="w-15 rounded-xl"
               />
             </h2>
-            <a
-              href="https://github.com/Samrat-Deula7"
-              className="flex justify-center items-center mb-2  p-3 w-65 rounded-xl bg-blue-500/10 border border-white hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]  transition-all"
-            >
-              <img src={GithubImg} alt="git hub" className="w-10" />
-              <span className="ml-4">Github</span>
-            </a>
-            <a
-              href="https://www.youtube.com/@SamratDeula-c4x3o"
-              className="flex justify-center items-center mb-2  p-3 w-65 rounded-xl bg-blue-500/10 border border-white hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]  transition-all"
-            >
-              <img src={YT} alt="git hub" className="w-10" />
-              <span className="ml-4">YouTube</span>
-            </a>
-            <a
-              href="https://www.facebook.com/samrat.deula.52"
-              className="flex justify-center  items-center mb-2  p-3 w-65 rounded-xl bg-blue-500/10 border border-white hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]  transition-all"
-            >
-              <img src={FbImg} alt="git hub" className="w-10" />
-              <span className="ml-4">Facebook</span>
-            </a>
-            <a
-              href="https://www.instagram.com/deula.samrat/"
-              className="flex justify-center items-center mb-2  p-3 w-65 rounded-xl bg-blue-500/10 border border-white hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]  transition-all"
-            >
-              <img src={InstaImg} alt="Instagram" className="w-10" />
-              <span className="ml-4">Instagram</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/samrat-deula-412531369/"
-              className="flex justify-center items-center mb-2  p-3 rounded-xl w-65 bg-blue-500/10 border border-white hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]  transition-all"
-            >
-              <img src={LinkedinImg} alt="Linkedin" className="w-10" />
-              <span className="ml-4">Linkedin</span>
-            </a>
+            {socials.map((s, i) => (
+              <a
+                key={i}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-center items-center mb-2 p-3 w-65 rounded-xl bg-[#FFFBE9] border border-[#AD8B73]/20 hover:-translate-y-1 hover:border-[#AD8B73]/40 hover:shadow-[0_8px_20px_rgba(173,139,115,0.2)] transition-all"
+              >
+                <img src={s.img} alt={s.label} className="w-10" />
+                <span className="ml-4 text-[#3E2F24] font-semibold">
+                  {s.label}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </RevealOnScroll>

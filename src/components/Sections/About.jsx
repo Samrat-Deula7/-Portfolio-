@@ -11,7 +11,6 @@ import AwsImg from "../../assets/aws.png";
 import Time from "../../assets/time.gif";
 import TsURL from "../../assets/typescript.svg";
 import JsURL from "../../assets/js.png";
-import C from "../../assets/c.png";
 import Csharp from "../../assets/csharp.png";
 import dotnet from "../../assets/.net.svg";
 import html from "../../assets/html.png";
@@ -23,15 +22,155 @@ import { useEffect, useState } from "react";
 
 import AboutPopTimeLine from "./AboutPopTimeLine";
 
+const SkillCard = ({ img, alt, name, percent, scrolled, imgClass }) => (
+  <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border border-[#AD8B73]/15 bg-[#FFFBE9] px-4 py-6 hover:border-[#AD8B73]/40 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(173,139,115,0.15)] transition-all rounded-2xl">
+    <div className="h-18">
+      <img src={img} alt={alt} className={`absolute ${imgClass}`} />
+    </div>
+    <h4 className="text-md text-[#3E2F24] font-semibold">{name}</h4>
+    <div className="w-[100px] h-[6px] md:h-[7px] bg-[#E3CAA5]/50 rounded overflow-hidden">
+      <div
+        className={`h-full bg-gradient-to-r from-[#CEAB93] to-[#AD8B73] rounded transition-all duration-700 ${
+          scrolled ? "" : "w-0"
+        }`}
+        style={scrolled ? { width: percent + "%" } : {}}
+      ></div>
+    </div>
+    <h4 className="duration-700 text-sm text-[#AD8B73] font-bold">
+      {scrolled ? percent + "%" : "0%"}
+    </h4>
+  </div>
+);
+
 const About = ({ aboutPop, setAboutPop }) => {
-  // const frontendSkills = ["React", "TailwindCSS"];
-  // const backendSkills = ["Node.js", "Express.js", "MongoDB"];
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 600);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const skills = [
+    {
+      img: ReactImg,
+      alt: "react",
+      name: "React",
+      percent: 80,
+      imgClass: "top-6 left-7 w-20 h-20",
+    },
+    {
+      img: TailwindCSSImg,
+      alt: "tailwind",
+      name: "Tailwind",
+      percent: 70,
+      imgClass: "top-12 left-7 w-20 h-10",
+    },
+    {
+      img: NodeImg,
+      alt: "node js",
+      name: "Node JS",
+      percent: 80,
+      imgClass: "top-6 left-7 w-20 h-20",
+    },
+    {
+      img: ExpressImg,
+      alt: "express",
+      name: "Express",
+      percent: 80,
+      imgClass: "top-6 left-0 w-48 h-20",
+    },
+    {
+      img: MongoImg,
+      alt: "mongo db",
+      name: "MongoDB",
+      percent: 80,
+      imgClass: "top-8 left-0 w-50 h-20",
+    },
+    {
+      img: SQL,
+      alt: "SQL server",
+      name: "SQL SERVER",
+      percent: 60,
+      imgClass: "top-6 left-7 w-20 h-20",
+    },
+    {
+      img: PostSQL,
+      alt: "PostgreSQL",
+      name: "PostgreSQL",
+      percent: 60,
+      imgClass: "top-6 left-7 w-20 h-20",
+    },
+    {
+      img: GitImg,
+      alt: "Git",
+      name: "Git",
+      percent: 90,
+      imgClass: "top-6 left-7 w-20 h-20",
+    },
+    {
+      img: AwsImg,
+      alt: "AWS",
+      name: "AWS",
+      percent: 10,
+      imgClass: "top-6 left-2 w-30 h-20 rounded-2xl",
+    },
+    {
+      img: TsURL,
+      alt: "TypeScript",
+      name: "TypeScript",
+      percent: 30,
+      imgClass: "top-6 left-2 w-30 h-20 rounded-2xl",
+    },
+    {
+      img: JsURL,
+      alt: "JavaScript",
+      name: "JavaScript",
+      percent: 90,
+      imgClass: "top-6 left-7 w-20 h-20 rounded-2xl",
+    },
+    {
+      img: Csharp,
+      alt: "C sharp",
+      name: "C Sharp",
+      percent: 50,
+      imgClass: "top-3 left-5 w-25 h-25 rounded-2xl",
+    },
+    {
+      img: dotnet,
+      alt: ".NET",
+      name: ".NET",
+      percent: 30,
+      imgClass: "top-6 left-2 w-30 h-20 rounded-2xl",
+    },
+    {
+      img: html,
+      alt: "HTML",
+      name: "HTML",
+      percent: 90,
+      imgClass: "top-6 left-7 w-20 h-20 rounded-2xl",
+    },
+    {
+      img: css,
+      alt: "CSS",
+      name: "CSS",
+      percent: 90,
+      imgClass: "top-6 left-7 w-20 h-20 rounded-2xl",
+    },
+    {
+      img: NestJS,
+      alt: "NestJS",
+      name: "Nest JS",
+      percent: 60,
+      imgClass: "top-6 left-7 w-20 h-20 rounded-2xl",
+    },
+    {
+      img: Python,
+      alt: "Python",
+      name: "Python",
+      percent: 60,
+      imgClass: "top-6 left-7 w-20 h-20 rounded-2xl",
+    },
+  ];
 
   return (
     <section
@@ -41,402 +180,55 @@ const About = ({ aboutPop, setAboutPop }) => {
       <AboutPopTimeLine aboutPop={aboutPop} setAboutPop={setAboutPop} />
       <RevealOnScroll>
         <div className="max-w-7xl mx-auto px-4 md:w-3xl lg:w-5xl xl:w-7xl">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
-            About me
+          <p className="text-[#AD8B73] font-bold tracking-widest uppercase text-sm text-center mb-2">
+            About Me
+          </p>
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-[#AD8B73] to-[#CEAB93] bg-clip-text text-transparent text-center">
+            Skills &amp; Journey
           </h2>
 
-          {/* This is the skills section */}
-          <div className="   rounded-xl p-8 border-white/10 border hover:-translate-y-1 hover:border-white/50  transition-all">
-            <p className="text-gray-300 mb-6 text-xl font-bold ">
+          {/* Skills grid */}
+          <div className="rounded-2xl p-8 border border-[#AD8B73]/15 bg-[#FFFBE9] hover:border-[#AD8B73]/30 transition-all">
+            <p className="text-[#6B5847] mb-6 text-xl font-bold">
               Passionate developer with expertise in building scalable web
-              application and creating innovative solutions.
+              applications and creating innovative solutions.
             </p>
-            <div className=" flex flex-wrap items-center justify-around place-items-center  ">
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  {" "}
-                  <img
-                    src={ReactImg}
-                    alt="react"
-                    className="absolute top-6 left-7 w-20  h-20 "
-                  />{" "}
-                </div>
-                <h4 className="text-md ">React</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[80%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "80%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={TailwindCSSImg}
-                    alt="tailwind"
-                    className="absolute top-12 left-7 w-20 h-10"
-                  />{" "}
-                </div>
-                <h4 className="text-md ">Tailwind</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[70%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "70%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-6 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={NodeImg}
-                    alt="node js"
-                    className="absolute top-6 left-7 w-20  h-20"
-                  />
-                </div>
-                <h4 className="text-md ">Node JS</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[80%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "80%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-2 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={ExpressImg}
-                    alt="express"
-                    className="absolute top-6 left-0 w-48 h-20"
-                  />{" "}
-                </div>
-                <h4 className="text-md ">Express</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[80%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "80%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={MongoImg}
-                    alt="mongo db"
-                    className="absolute top-8 left-0 w-50 h-20"
-                  />
-                </div>
-                <h4 className="text-md ">MongoDB</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[80%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "80%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={SQL}
-                    alt="SQL server"
-                    className="absolute top-6 left-7 w-20 h-20"
-                  />
-                </div>
-                <h4 className="text-md ">SQL SERVER</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[80%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "60%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={PostSQL}
-                    alt="SQL server"
-                    className="absolute top-6 left-7 w-20 h-20"
-                  />
-                </div>
-                <h4 className="text-md ">Postgresql</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[80%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "60%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={GitImg}
-                    alt="Git"
-                    className="absolute top-6 left-7 w-20 h-20"
-                  />
-                </div>
-                <h4 className="text-md ">Git</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[90%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "90%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={AwsImg}
-                    alt="AWS"
-                    className="absolute top-6 left-2 w-30 h-20 rounded-2xl"
-                  />
-                </div>
-                <h4 className="text-md ">AWS</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[10%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "10%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={TsURL}
-                    alt="Type Script"
-                    className="absolute top-6 left-2 w-30 h-20 rounded-2xl"
-                  />
-                </div>
-                <h4 className="text-md ">Type Script</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[30%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "30%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={JsURL}
-                    alt="Java Script"
-                    className="absolute top-6 left-7 w-20 h-20 rounded-2xl"
-                  />
-                </div>
-                <h4 className="text-md ">Java Script</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[90%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "90%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={Csharp}
-                    alt="C sharp "
-                    className="absolute top-3 left-5 w-25 h-25 rounded-2xl"
-                  />
-                </div>
-                <h4 className="text-md ">C sharp</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[50%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "50%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={dotnet}
-                    alt="dot net "
-                    className="absolute top-6 left-2 w-30 h-20 rounded-2xl"
-                  />
-                </div>
-                <h4 className="text-md ">.Net</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[30%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "30%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={html}
-                    alt="html"
-                    className="absolute top-6 left-7 w-20 h-20 rounded-2xl"
-                  />
-                </div>
-                <h4 className="text-md ">Html</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[90%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "90%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={css}
-                    alt="css"
-                    className="absolute top-6 left-7 w-20 h-20 rounded-2xl"
-                  />
-                </div>
-                <h4 className="text-md ">CSS</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[90%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "90%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={NestJS}
-                    alt="NestJS"
-                    className="absolute top-6 left-7 w-20 h-20 rounded-2xl"
-                  />
-                </div>
-                <h4 className="text-md ">Nest JS</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[60%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "60%" : "0%"}
-                </h4>
-              </div>
-
-              <div className="relative flex flex-col items-center cursor-pointer gap-y-1 mb-6 w-[140px] h-[200px] justify-center border-white/10 border bg-blue-500/10 px-4 py-6 hover:border-white/50  hover:-translate-y-1 transition-all rounded-2xl ">
-                <div className="h-18">
-                  <img
-                    src={Python}
-                    alt="Python"
-                    className="absolute top-6 left-7 w-20 h-20 rounded-2xl"
-                  />
-                </div>
-                <h4 className="text-md ">Python</h4>
-                <div className="w-[100px] h-[6px] md:h-[7px] bg-gray-800 rounded  overflow-hidden">
-                  <div
-                    className={`w-0 h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] duration-700  ${
-                      scrolled ? "w-[60%]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <h4 className="duration-700 text-sm">
-                  {scrolled ? "60%" : "0%"}
-                </h4>
-              </div>
+            <div className="flex flex-wrap items-center justify-around place-items-center">
+              {skills.map((s, i) => (
+                <SkillCard key={i} {...s} scrolled={scrolled} />
+              ))}
             </div>
           </div>
 
-          {/* This only shows in small and middle size screen */}
-          <div className="md:hidden grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 hover:border-white/50  transition-all">
-              <h3 className="text-xl font-bold mb-4 text-purple-500 xl:text-3xl">
+          {/* Mobile / tablet: Journey + Work Experience */}
+          <div className="md:hidden grid grid-cols-1 gap-6 mt-8">
+            <div className="p-6 rounded-xl border border-[#AD8B73]/15 bg-[#FFFBE9] hover:-translate-y-1 hover:border-[#AD8B73]/30 transition-all">
+              <h3 className="text-xl font-bold mb-4 text-[#AD8B73] xl:text-3xl">
                 Journey
               </h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
+              <ul className="list-disc list-inside text-[#6B5847] space-y-2">
                 <li>
-                  <strong>BSC.IT in Computer Science </strong> -APU University
-                  (2025-2028).
+                  <strong className="text-[#3E2F24]">
+                    BSC.IT in Computer Science
+                  </strong>{" "}
+                  — APU University (2025-2028).
                 </li>
                 <li>
                   Relevant Coursework: Data Structures, Full web dev, DevOps ...
                 </li>
               </ul>
             </div>
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 hover:border-white/50  transition-all">
-              <h3 className="text-xl font-bold mb-4">👩🏻‍💻 Work Experience</h3>
-              <div className="space-y-4 text-gray-300">
+            <div className="p-6 rounded-xl border border-[#AD8B73]/15 bg-[#FFFBE9] hover:-translate-y-1 hover:border-[#AD8B73]/30 transition-all">
+              <h3 className="text-xl font-bold mb-4 text-[#3E2F24]">
+                👩🏻‍💻 Work Experience
+              </h3>
+              <div className="space-y-4 text-[#6B5847]">
                 <div>
-                  <h4 className="font-bold text-2xl text-purple-500">
+                  <h4 className="font-bold text-2xl text-[#AD8B73]">
                     Backend Internship at:
-                  </h4>{" "}
+                  </h4>
                   <br />
-                  <p className="text-gray-600">
+                  <p>
                     I am currently working as a Backend Intern at Pragya
                     Technologies, where I focus on designing and building
                     backend APIs. My work involves leveraging PostgreSQL for
@@ -450,45 +242,44 @@ const About = ({ aboutPop, setAboutPop }) => {
             </div>
           </div>
 
-          {/* This shows in large size screen */}
+          {/* Desktop timeline */}
           <div className="hidden md:flex">
-            <div className="w-full flex flex-col justify-center items-center py-10 ">
-              <h3 className="text-xl font-bold mb-4 text-purple-500 xl:text-3xl">
+            <div className="w-full flex flex-col justify-center items-center py-10">
+              <h3 className="text-xl font-bold mb-4 text-[#AD8B73] xl:text-3xl">
                 Journey
               </h3>
 
-              {/* This are each block of time line */}
-              <div className="w-[70%] flex items-start ">
-                {/* This is timeline block 1 */}
+              <div className="w-[70%] flex items-start">
+                {/* Timeline block 1 */}
                 <div
-                  className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3"
+                  className="timeline-block relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl cursor-pointer text-[#3E2F24] transform duration-100 hover:-translate-y-2 mr-3 border border-[#AD8B73]/20 shadow-[0_8px_20px_rgba(173,139,115,0.15)]"
                   onClick={() =>
                     setAboutPop({ ...aboutPop, type: "2025-2028", isOn: true })
                   }
                 >
-                  <strong className="text-purple-900 font-extrabold text-[17px]">
+                  <strong className="text-[#AD8B73] font-extrabold text-[17px]">
                     BSC.IT in Computer Science:
                     <br />
-                    <span className="text-[14px] text-black ">
+                    <span className="text-[14px] text-[#6B5847]">
                       Completed the course in APU with <br />
                       Relevant Coursework: Data Structures, Full stack dev,
                       DevOps ...
                     </span>
                   </strong>{" "}
                   -APU University
-                  <div className="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "></div>
+                  <div className="w-0 h-0 absolute left-6 -bottom-6 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[15px] border-t-[#E3CAA5]"></div>
                 </div>
 
-                {/* This is timeline block 2 */}
+                {/* Timeline block 2 */}
                 <div
-                  className="relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl  bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)] cursor-pointer   text-black transform duration-100 hover:-translate-y-2 mr-3"
+                  className="timeline-block relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl cursor-pointer text-[#3E2F24] transform duration-100 hover:-translate-y-2 mr-3 border border-[#AD8B73]/20 shadow-[0_8px_20px_rgba(173,139,115,0.15)]"
                   onClick={() =>
                     setAboutPop({ ...aboutPop, type: "2026", isOn: true })
                   }
                 >
-                  <strong className="text-purple-900 font-extrabold text-[17px]">
+                  <strong className="text-[#AD8B73] font-extrabold text-[17px]">
                     Backend Internship at:
-                    <span className="text-[14px] text-black ">
+                    <span className="text-[14px] text-[#6B5847]">
                       <div className="flex items-center justify-start">
                         <img
                           src={PragyaLogo}
@@ -497,31 +288,30 @@ const About = ({ aboutPop, setAboutPop }) => {
                         />
                         Pragya Technologies.
                       </div>
-                      <span className="text-[14px] text-black ">
+                      <span className="text-[14px] text-[#6B5847]">
                         I am currently working as a Backend Intern at Pragya ...
                       </span>
                     </span>
-                  </strong>{" "}
-                  <div className="w-0 h-0 absolute left-6 -bottom-6  border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent border-t-[15px] border-t-[#2563eb] "></div>
+                  </strong>
+                  <div className="w-0 h-0 absolute left-6 -bottom-6 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[15px] border-t-[#E3CAA5]"></div>
                 </div>
-                <p className="mt-[140px] ml-[80px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px]  transform duration-100 hover:-translate-y-2">
+                <p className="mt-[140px] ml-[80px] font-extrabold text-[#AD8B73] hover:text-[#96755f] cursor-pointer hover:text-[20px] transform duration-100 hover:-translate-y-2">
                   2028 +
                 </p>
               </div>
 
-              {/* this is line */}
-              <div className="bg-gradient-to-r  from-blue-500 to-purple-600   w-[70%] h-1 transform duration-100 hover:-translate-y-2 hover:border-0 cursor-pointer"></div>
+              {/* Timeline line */}
+              <div className="bg-gradient-to-r from-[#AD8B73] to-[#CEAB93] w-[70%] h-1 transform duration-100 hover:-translate-y-2 hover:border-0 cursor-pointer rounded-full"></div>
 
-              {/* This are each block of time line */}
               <div className="w-[80%] flex items-end">
-                <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
+                <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-[#AD8B73] hover:text-[#96755f] cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
                   (2025-2028)
                 </p>
-                <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-purple-900 hover:text-blue-500 cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
+                <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-[#AD8B73] hover:text-[#96755f] cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
                   (2026)
                 </p>
-                <div className="flex items-center justify-center pointer-events-none cursor-not-allowed relative -right-25 w-[300px] h-[150px] mt-7 rounded-2xl bg-[linear-gradient(to_bottom_right,_#f0f4ff,_#2563eb)]    text-black transform duration-100 hover:translate-y-2 ">
-                  <div className="relative w-60 h-20 bg-blue-500 font-bold text-purple-900 rounded-2xl transition-transform animate-bounce px-4 py-4">
+                <div className="flex items-center justify-center pointer-events-none cursor-not-allowed relative -right-25 w-[300px] h-[150px] mt-7 rounded-2xl timeline-block border border-[#AD8B73]/20 text-[#3E2F24] transform duration-100 hover:translate-y-2 shadow-[0_8px_20px_rgba(173,139,115,0.15)]">
+                  <div className="relative w-60 h-20 bg-[#AD8B73] font-bold text-[#FFFBE9] rounded-2xl transition-transform animate-bounce px-4 py-4">
                     Currently completing my bachelor's degree{" "}
                     <span className="font-extrabold">!!</span>{" "}
                     <img
@@ -530,7 +320,7 @@ const About = ({ aboutPop, setAboutPop }) => {
                       className="absolute left-40 -bottom-10 w-[80px] h-[80px] rounded-full"
                     />
                   </div>
-                  <div className="w-0 h-0 absolute -top-6 left-6 border-l-[10px] border-l-transparent  border-r-[10px] border-r-transparent  border-b-[15px] border-b-blue-500"></div>
+                  <div className="w-0 h-0 absolute -top-6 left-6 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[15px] border-b-[#AD8B73]"></div>
                 </div>
               </div>
             </div>

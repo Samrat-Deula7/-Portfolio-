@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import Night from "../assets/night.png";
-import Light from "../assets/sun.png";
-const Navbar = ({ menuOpen, setMenuOpen, darkmode, setDarkmode }) => {
+
+const Navbar = ({ menuOpen, setMenuOpen }) => {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -10,89 +9,60 @@ const Navbar = ({ menuOpen, setMenuOpen, darkmode, setDarkmode }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Remove both possible classes first
-    document.body.classList.remove("dark", "light");
-
-    // Add the correct one based on darkmode
-    if (darkmode) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.add("light");
-    }
-  }, [darkmode]);
-
   return (
-    // fixed top-0 left-0 right-0 z-50 transition-all duration-300
     <nav
-      className={`fixed top-0 max-w-screen z-40 transition-all duration-300${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? " backdrop-blur-xl border-b border-white/10 shadow-lg"
+          ? "bg-[#FFFBE9]/85 backdrop-blur-xl border-b border-[#AD8B73]/15 shadow-[0_4px_20px_rgba(173,139,115,0.1)]"
           : "bg-transparent"
       }`}
     >
-      <div className="min-w-screen  max-w-5xl mx-auto px-4">
-        <div className="flex justify-between sm:justify-around items-center h-16 ">
-          <a href="#home" className="font-mono text-xl font-bold text-white">
-            Samrat <span className="text-purple-900">Dev</span>
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          <a
+            href="#home"
+            className="font-mono text-xl font-bold text-[#AD8B73]"
+          >
+            Samrat<span className="text-[#3E2F24]">Dev</span>.
           </a>
 
-          {/* This is the mobile menu */}
+          {/* Mobile hamburger */}
           <div
-            className=" w-7 h-5 relative cursor-pointer z-40 md:hidden"
+            className="w-7 h-5 relative cursor-pointer z-40 md:hidden text-[#AD8B73] text-2xl"
             onClick={() => setMenuOpen((prev) => !prev)}
           >
             &#9776;
           </div>
 
-          {/* This is the desktop menu */}
-          {/* In the class hidden sets display to hidden but md:flex sets display to flex from medium size to large */}
-          <div className="hidden md:flex items-center space-x-8 ">
+          {/* Desktop menu */}
+          <div className="hidden md:flex items-center space-x-8">
             <a
               href="#home"
-              className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+              className="text-[#6B5847] hover:text-[#AD8B73] transition-colors font-medium relative group"
             >
               Home
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#AD8B73] rounded transition-all duration-300 group-hover:w-full"></span>
             </a>
-
             <a
               href="#about"
-              className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+              className="text-[#6B5847] hover:text-[#AD8B73] transition-colors font-medium relative group"
             >
               About
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#AD8B73] rounded transition-all duration-300 group-hover:w-full"></span>
             </a>
-
             <a
               href="#projects"
-              className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+              className="text-[#6B5847] hover:text-[#AD8B73] transition-colors font-medium relative group"
             >
               Projects
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#AD8B73] rounded transition-all duration-300 group-hover:w-full"></span>
             </a>
-
             <a
               href="#contact"
-              className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+              className="bg-[#AD8B73] text-[#FFFBE9] px-5 py-2 rounded-full font-semibold hover:bg-[#96755f] hover:-translate-y-0.5 transition-all duration-200 shadow-[0_4px_15px_rgba(173,139,115,0.3)]"
             >
               Contact
             </a>
-          </div>
-          <div className="w-[100px] absolute ">
-            <img
-              src={Night}
-              alt="night-toggle"
-              className={`w-[25px] relative -mx-5 top-0 left-70 sm:left-70 md:left-100 lg:left-120 xl:left-150 2xl:left-180 transform duration-100 hover:-translate-y-1 cursor-pointer ${
-                darkmode ? "hidden" : "flex"
-              }`}
-              onClick={() => setDarkmode((prev) => !prev)}
-            />
-            <img
-              src={Light}
-              alt="light-toggle"
-              className={`w-[25px] relative -mx-5 top-0 left-70 sm:left-70 md:left-100 lg:left-120 xl:left-150 2xl:left-180 transform duration-100 hover:-translate-y-1 cursor-pointer ${
-                darkmode ? "flex" : "hidden"
-              }`}
-              onClick={() => setDarkmode((prev) => !prev)}
-            />
           </div>
         </div>
       </div>

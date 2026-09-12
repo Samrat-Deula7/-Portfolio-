@@ -20,12 +20,12 @@ const LoadingScreen = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 max-w-screen z-50 bg-black text-gray-100 flex flex-col items-center justify-center">
-      <div className="mb-4  font-mono font-bold text-3xl md:text-5xl lg:text-7xl  bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent ">
-        {text} <span className="animate-blink ml-1 text-white">|</span>
+    <div className="fixed inset-0 max-w-screen z-50 bg-[#FFFBE9] text-[#3E2F24] flex flex-col items-center justify-center">
+      <div className="mb-4 font-mono font-bold text-3xl md:text-5xl lg:text-7xl bg-gradient-to-r from-[#AD8B73] to-[#CEAB93] bg-clip-text text-transparent">
+        {text} <span className="animate-blink ml-1 text-[#AD8B73]">|</span>
       </div>
-      <div className="w-[250px] h-[2px] md:w-[600px] md:h-[4px] bg-gray-800 rounded relative overflow-hidden animate-ping">
-        <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+      <div className="w-[250px] h-[2px] md:w-[600px] md:h-[4px] bg-[#E3CAA5] rounded relative overflow-hidden">
+        <div className="w-[40%] h-full bg-[#AD8B73] shadow-[0_0_15px_#AD8B73] animate-loading-bar"></div>
       </div>
     </div>
   );

@@ -8,12 +8,10 @@ import Projects from "./components/Sections/Projects";
 import Contact from "./components/Sections/Contact";
 import { useEffect } from "react";
 
-function App({ darkmode, setDarkmode }) {
+function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutPop, setAboutPop] = useState({ type: "", isOn: false });
-
-  // The following useEffect prevents the page form scrolling when the hamburger icon is open
 
   useEffect(() => {
     if (menuOpen || aboutPop.isOn) {
@@ -33,6 +31,7 @@ function App({ darkmode, setDarkmode }) {
       window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
   }, [menuOpen, aboutPop.isOn]);
+
   return (
     <>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
@@ -42,12 +41,7 @@ function App({ darkmode, setDarkmode }) {
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
-        <Navbar
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
-          darkmode={darkmode}
-          setDarkmode={setDarkmode}
-        />
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
         <About aboutPop={aboutPop} setAboutPop={setAboutPop} />
