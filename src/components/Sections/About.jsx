@@ -128,20 +128,7 @@ const About = ({ aboutPop, setAboutPop }) => {
       percent: 90,
       imgClass: "top-6 left-7 w-20 h-20 rounded-2xl",
     },
-    {
-      img: Csharp,
-      alt: "C sharp",
-      name: "C Sharp",
-      percent: 50,
-      imgClass: "top-3 left-5 w-25 h-25 rounded-2xl",
-    },
-    {
-      img: dotnet,
-      alt: ".NET",
-      name: ".NET",
-      percent: 30,
-      imgClass: "top-6 left-2 w-30 h-20 rounded-2xl",
-    },
+
     {
       img: html,
       alt: "HTML",
@@ -154,20 +141,6 @@ const About = ({ aboutPop, setAboutPop }) => {
       alt: "CSS",
       name: "CSS",
       percent: 90,
-      imgClass: "top-6 left-7 w-20 h-20 rounded-2xl",
-    },
-    {
-      img: NestJS,
-      alt: "NestJS",
-      name: "Nest JS",
-      percent: 60,
-      imgClass: "top-6 left-7 w-20 h-20 rounded-2xl",
-    },
-    {
-      img: Python,
-      alt: "Python",
-      name: "Python",
-      percent: 60,
       imgClass: "top-6 left-7 w-20 h-20 rounded-2xl",
     },
   ];
