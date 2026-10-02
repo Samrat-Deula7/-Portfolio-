@@ -125,7 +125,7 @@ const About = ({ aboutPop, setAboutPop }) => {
       img: TsURL,
       alt: "TypeScript",
       name: "TypeScript",
-      percent: 30,
+      percent: 90,
       imgClass: "top-6 left-2 w-30 h-20 rounded-2xl",
     },
     {
