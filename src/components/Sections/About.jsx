@@ -115,6 +115,13 @@ const About = ({ aboutPop, setAboutPop }) => {
       imgClass: "top-6 left-2 w-30 h-20 rounded-2xl",
     },
     {
+      img: Python,
+      alt: "Python",
+      name: "Python",
+      percent: 60,
+      imgClass: "top-6 left-6.5 w-20 h-20 rounded-2xl",
+    },
+    {
       img: TsURL,
       alt: "TypeScript",
       name: "TypeScript",
