@@ -90,14 +90,14 @@ const About = ({ aboutPop, setAboutPop }) => {
       img: SQL,
       alt: "SQL server",
       name: "SQL SERVER",
-      percent: 60,
+      percent: 80,
       imgClass: "top-6 left-7 w-20 h-20",
     },
     {
       img: PostSQL,
       alt: "PostgreSQL",
       name: "PostgreSQL",
-      percent: 60,
+      percent: 80,
       imgClass: "top-6 left-7 w-20 h-20",
     },
     {
