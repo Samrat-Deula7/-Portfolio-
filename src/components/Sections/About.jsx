@@ -229,10 +229,12 @@ const About = ({ aboutPop, setAboutPop }) => {
                 Journey
               </h3>
 
-              <div className="w-[70%] flex items-start">
+              {/* One grid = every column has the same width, so dates always align under their block */}
+              <div className="w-[90%] max-w-[1000px] grid grid-cols-3 gap-x-4">
+                {/* ---------- ROW 1: blocks ---------- */}
                 {/* Timeline block 1 */}
                 <div
-                  className="timeline-block relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl cursor-pointer text-[#3E2F24] transform duration-100 hover:-translate-y-2 mr-3 border border-[#AD8B73]/20 shadow-[0_8px_20px_rgba(173,139,115,0.15)]"
+                  className="timeline-block relative min-h-[150px] px-3 py-2 mb-7 rounded-2xl cursor-pointer text-[#3E2F24] transform duration-100 hover:-translate-y-2 border border-[#AD8B73]/20 shadow-[0_8px_20px_rgba(173,139,115,0.15)]"
                   onClick={() =>
                     setAboutPop({ ...aboutPop, type: "2025-2028", isOn: true })
                   }
@@ -252,7 +254,7 @@ const About = ({ aboutPop, setAboutPop }) => {
 
                 {/* Timeline block 2 */}
                 <div
-                  className="timeline-block relative w-[300px] h-[150px] px-3 py-2 mb-7 rounded-2xl cursor-pointer text-[#3E2F24] transform duration-100 hover:-translate-y-2 mr-3 border border-[#AD8B73]/20 shadow-[0_8px_20px_rgba(173,139,115,0.15)]"
+                  className="timeline-block relative min-h-[150px] px-3 py-2 mb-7 rounded-2xl cursor-pointer text-[#3E2F24] transform duration-100 hover:-translate-y-2 border border-[#AD8B73]/20 shadow-[0_8px_20px_rgba(173,139,115,0.15)]"
                   onClick={() =>
                     setAboutPop({ ...aboutPop, type: "2026", isOn: true })
                   }
@@ -275,22 +277,31 @@ const About = ({ aboutPop, setAboutPop }) => {
                   </strong>
                   <div className="w-0 h-0 absolute left-6 -bottom-6 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[15px] border-t-[#E3CAA5]"></div>
                 </div>
-                <p className="mt-[140px] ml-[80px] font-extrabold text-[#AD8B73] hover:text-[#96755f] cursor-pointer hover:text-[20px] transform duration-100 hover:-translate-y-2">
-                  2028 +
-                </p>
-              </div>
 
-              {/* Timeline line */}
-              <div className="bg-gradient-to-r from-[#AD8B73] to-[#CEAB93] w-[70%] h-1 transform duration-100 hover:-translate-y-2 hover:border-0 cursor-pointer rounded-full"></div>
+                {/* 2028+ label */}
+                <div className="flex items-end justify-center mb-7">
+                  <p className="font-extrabold text-[#AD8B73] hover:text-[#96755f] cursor-pointer hover:text-[20px] transform duration-100 hover:-translate-y-2 whitespace-nowrap">
+                    2028 +
+                  </p>
+                </div>
 
-              <div className="w-[80%] flex items-end">
-                <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-[#AD8B73] hover:text-[#96755f] cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
-                  (2025-2028)
-                </p>
-                <p className="mb-[140px] mr-[220px] ml-[30px] font-extrabold text-[#AD8B73] hover:text-[#96755f] cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2">
-                  (2026)
-                </p>
-                <div className="flex items-center justify-center pointer-events-none cursor-not-allowed relative -right-25 w-[300px] h-[150px] mt-7 rounded-2xl timeline-block border border-[#AD8B73]/20 text-[#3E2F24] transform duration-100 hover:translate-y-2 shadow-[0_8px_20px_rgba(173,139,115,0.15)]">
+                {/* ---------- ROW 2: timeline line ---------- */}
+                <div className="col-span-3 bg-gradient-to-r from-[#AD8B73] to-[#CEAB93] h-1 transform duration-100 hover:-translate-y-2 cursor-pointer rounded-full"></div>
+
+                {/* ---------- ROW 3: dates + current status ---------- */}
+                <div className="flex justify-center mt-4">
+                  <p className="font-extrabold text-[#AD8B73] hover:text-[#96755f] cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2 whitespace-nowrap text-center">
+                    (2025-2028)
+                  </p>
+                </div>
+
+                <div className="flex justify-center mt-4">
+                  <p className="font-extrabold text-[#AD8B73] hover:text-[#96755f] cursor-pointer hover:text-[20px] transform duration-100 hover:translate-y-2 whitespace-nowrap text-center">
+                    (2026/05 - 2026/09)
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-center pointer-events-none cursor-not-allowed relative min-h-[150px] mt-7 rounded-2xl timeline-block border border-[#AD8B73]/20 text-[#3E2F24] transform duration-100 hover:translate-y-2 shadow-[0_8px_20px_rgba(173,139,115,0.15)]">
                   <div className="relative w-60 h-20 bg-[#AD8B73] font-bold text-[#FFFBE9] rounded-2xl transition-transform animate-bounce px-4 py-4">
                     Currently completing my bachelor's degree{" "}
                     <span className="font-extrabold">!!</span>{" "}
