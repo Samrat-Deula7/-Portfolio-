@@ -11,7 +11,7 @@ const AboutPopTimeLine = ({ aboutPop, setAboutPop }) => {
     },
     {
       title: "Backend Internship at:",
-      body: "I am currently working as a Backend Intern at Pragya Technologies, where I focus on designing and building backend APIs. My work involves leveraging PostgreSQL for database management and ensuring efficient, scalable backend solutions. This internship is helping me strengthen my skills in backend development, API design, and database optimization while contributing to real-world projects.",
+      body: "I successfully completed a 4‑month internship (2026/05 – 2026/09) as a Backend Intern at Pragya Technologies, where I focused on designing and building backend APIs. My work involved leveraging PostgreSQL for database management and delivering efficient, scalable backend solutions. During this internship, I strengthened my skills in backend development, API design, and database optimization while contributing to real-world projects that enhanced my practical experience.",
       image: PragyaBanner,
     },
   ];

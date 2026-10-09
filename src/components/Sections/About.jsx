@@ -205,17 +205,19 @@ const About = ({ aboutPop, setAboutPop }) => {
               <div className="space-y-4 text-[#6B5847]">
                 <div>
                   <h4 className="font-bold text-2xl text-[#AD8B73]">
-                    Backend Internship at:
+                    Completed Backend Internship from:
                   </h4>
                   <br />
                   <p>
-                    I am currently working as a Backend Intern at Pragya
-                    Technologies, where I focus on designing and building
-                    backend APIs. My work involves leveraging PostgreSQL for
-                    database management and ensuring efficient, scalable backend
-                    solutions. This internship is helping me strengthen my
-                    skills in backend development, API design, and database
-                    optimization while contributing to real-world projects.
+                    I successfully completed a 4‑month Backend Internship (May
+                    2026 – September 2026) at Pragya Technologies, where I
+                    focused on designing and building backend APIs. My work
+                    involved leveraging PostgreSQL for database management and
+                    delivering efficient, scalable backend solutions. This
+                    internship allowed me to strengthen my skills in backend
+                    development, API design, and database optimization while
+                    contributing to real-world projects that enhanced my
+                    practical experience.
                   </p>
                 </div>
               </div>
@@ -260,7 +262,7 @@ const About = ({ aboutPop, setAboutPop }) => {
                   }
                 >
                   <strong className="text-[#AD8B73] font-extrabold text-[17px]">
-                    Backend Internship at:
+                    Completed Backend Internship from:
                     <span className="text-[14px] text-[#6B5847]">
                       <div className="flex items-center justify-start">
                         <img
@@ -271,7 +273,7 @@ const About = ({ aboutPop, setAboutPop }) => {
                         Pragya Technologies.
                       </div>
                       <span className="text-[14px] text-[#6B5847]">
-                        I am currently working as a Backend Intern at Pragya ...
+                        Completed working as a Backend Intern at Pragya ...
                       </span>
                     </span>
                   </strong>
