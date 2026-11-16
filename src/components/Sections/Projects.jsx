@@ -56,6 +56,10 @@ const Projects = () => {
         "Zod",
       ],
       link: "https://chillbyhour.com/",
+      links: [
+        { label: "Client Demo", url: "https://demo.chillbyhour.com/" },
+        { label: "Admin Demo", url: "https://chillbyhour.com/" },
+      ],
       gradient: "from-[#CEAB93] to-[#E3CAA5]",
     },
   ];
@@ -145,18 +149,23 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-between items-center">
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-1 text-[#AD8B73] hover:text-[#96755f] transition-colors my-4 font-semibold"
-                  >
-                    Live Demo
-                    <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">
-                      ➜
-                    </span>
-                  </a>
+                <div className="flex flex-wrap items-center gap-x-6">
+                  {(p.links || [{ label: "Live Demo", url: p.link }]).map(
+                    (l, k) => (
+                      <a
+                        key={k}
+                        href={l.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-1 text-[#AD8B73] hover:text-[#96755f] transition-colors my-4 font-semibold"
+                      >
+                        {l.label}
+                        <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">
+                          ➜
+                        </span>
+                      </a>
+                    ),
+                  )}
                 </div>
               </TiltCard>
             </RevealOnScroll>
