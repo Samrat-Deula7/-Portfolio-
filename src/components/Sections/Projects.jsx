@@ -9,29 +9,6 @@ import Project3Video from "../../assets/Projects/ChillByHourAppVideo.mp4";
 const Projects = () => {
   const projects = [
     {
-      img: Project2,
-      title: "Team Track",
-      desc: "Team Track is a modern project management web app designed to help teams organize tasks, track progress, and collaborate efficiently with a clean, user-friendly interface.",
-      tech: [
-        "React",
-        "Node.js",
-        "PostgreSQL",
-        "Express.js",
-        "TailwindCSS",
-        "TypeScript",
-      ],
-      link: "https://team-track-3v5z.vercel.app/",
-      gradient: "from-[#AD8B73] to-[#CEAB93]",
-    },
-    {
-      img: Project1,
-      title: "E-Kam",
-      desc: "Scalable note storing project with user authentication and user based data retrieval.",
-      tech: ["React", "Node.js", "MongoDB", "Express.js"],
-      link: "https://e-kam.vercel.app/",
-      gradient: "from-[#CEAB93] to-[#E3CAA5]",
-    },
-    {
       img: Project3,
       images: [
         { src: Project3, alt: "Chill By Hour admin dashboard" },
@@ -60,6 +37,29 @@ const Projects = () => {
         { label: "Client Demo", url: "https://demo.chillbyhour.com/" },
         { label: "Admin Demo", url: "https://chillbyhour.com/" },
       ],
+      gradient: "from-[#CEAB93] to-[#E3CAA5]",
+    },
+    {
+      img: Project2,
+      title: "Team Track",
+      desc: "Team Track is a modern project management web app designed to help teams organize tasks, track progress, and collaborate efficiently with a clean, user-friendly interface.",
+      tech: [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Express.js",
+        "TailwindCSS",
+        "TypeScript",
+      ],
+      link: "https://team-track-3v5z.vercel.app/",
+      gradient: "from-[#AD8B73] to-[#CEAB93]",
+    },
+    {
+      img: Project1,
+      title: "E-Kam",
+      desc: "Scalable note storing project with user authentication and user based data retrieval.",
+      tech: ["React", "Node.js", "MongoDB", "Express.js"],
+      link: "https://e-kam.vercel.app/",
       gradient: "from-[#CEAB93] to-[#E3CAA5]",
     },
   ];
